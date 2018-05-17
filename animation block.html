@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Progress bar</title>
+    <style>
+     #container {
+        width: 500px;
+        height: 500px;
+        position: relative;
+        background: gray;
+     }
+     #block {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        background: yellow;
+     }
+    </style>
+</head>
+<body>
+    <button id="btn">start</button>
+    <div id="container">
+        <div id="block"></div>
+    </div>
+
+    <script>
+        function move() {
+            var el = document.getElementById('block');
+            var position = 0;
+            var id = setInterval(frame, 10);
+            function frame() {
+                if (position == 450) {
+                    clearInterval(id);
+                } else {
+                    position++;
+                    el.style.top = position + 'px';
+                    el.style.left = position + 'px';
+                }
+            }
+        };
+
+        var btn = document.getElementById('btn');
+        btn.addEventListener('click', move);
+
+    </script>
+</body>
+</html>
