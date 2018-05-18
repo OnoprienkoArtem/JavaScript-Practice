@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Progress bar</title>
+    <style>
+        #rectangle {
+            width: 400px;
+            height: 300px;
+            background-color: gray;
+            margin: auto;
+        }
+        label {
+            width: 200px;
+            display: block;
+        }
+        .control {
+            display: inline-block;
+            padding: 10px;
+        }
+        .show {
+            width: 25px;
+        }
+        .right {
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="control">
+        <label for="tla">Top left angle:</label>
+        <input type="range" id="tla" min="0" max="100" value="0">
+        <span id="text_tla">0</span>
+        <span>%</span>
+    </div>
+    <div class="control right">
+        <label for="tra">Top right angle:</label>
+        <input type="range" id="tra" min="0" max="100" value="0">
+        <span id="text_tra">0</span>
+        <span>%</span>
+    </div>
+    <div id="rectangle"></div>
+    <div class="control right">
+        <label for="bra">Bottom right angle:</label>
+        <input type="range" id="bra" min="0" max="100" value="0">
+        <span id="text_bra">0</span>
+        <span>%</span>
+    </div>
+    <div class="control">
+        <label for="bla">Bottom left angle:</label>
+        <input type="range" id="bla" min="0" max="100" value="0">
+        <span id="text_bla">0</span>
+        <span>%</span>
+    </div>
+
+    <script>
+        function changeAngle() {
+            var tla = document.getElementById('tla').value;
+            var text_tla = document.getElementById('text_tla');
+            var tra = document.getElementById('tra').value;
+            var text_tra = document.getElementById('text_tra');
+            var bra = document.getElementById('bra').value;
+            var text_bra = document.getElementById('text_bra');
+            var bla = document.getElementById('bla').value;
+            var text_bla = document.getElementById('text_bla');
+            var rectangle = document.getElementById('rectangle');
+
+            text_tla.innerHTML = tla;
+            text_tra.innerHTML = tra;
+            text_bra.innerHTML = bra;
+            text_bla.innerHTML = bla;
+
+            rectangle.style.borderRadius = tla + "% " + tra + "% " + bra + "% " + bla + "% ";
+        }
+        window.addEventListener("input", changeAngle);
+    </script>
+</body>
+</html>
