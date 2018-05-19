@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Progress bar</title>
+    <style>
+        .message {
+            background-color: #f44336;
+            padding: 30px;
+            color: white;
+            opacity: 1;
+            transition: opacity .6s;
+            margin: 50px 150px;
+        }
+        .success {
+            background-color: #4caf50;
+        }
+        .info {
+            background-color: #2196f3;
+        }
+        .warning {
+            background-color: #ff9800;
+        }
+        .close {
+            color: white;
+            margin-left: 10px;
+            font-weight: bold;
+            float: right;
+            font-size: 20px;
+            line-height: 20px;
+            cursor: pointer;
+            transition:.3s;
+        }
+        .close:hover {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="message">
+        <span class="close">&times;</span>
+        <span>Danger</span>
+    </div>
+    <div class="message success">
+        <span class="close">&times;</span>
+        <span>Success</span>
+    </div>
+    <div class="message info">
+        <span class="close">&times;</span>
+        <span>Info</span>
+    </div>
+    <div class="message warning">
+        <span class="close">&times;</span>
+        <span>Warning</span>
+    </div>
+    <script>
+        var close = document.getElementsByClassName('close');
+
+        function closeFunc() {
+            var div = this.parentElement;
+            div.style.opacity = '0';
+            setTimeout(function() {
+                div.style.display = 'none';
+            }, 800)
+        };
+
+        for (var i = 0; i < close.length; i++) {
+            close[i].addEventListener('click', closeFunc);
+        };
+
+    </script>
+</body>
+</html>
