@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Drop-down menu</title>
+    <style>
+        #btn {
+            background-color: gray;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+        }
+        #btn:hover, #btn:focus {
+            background-color: silver;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            overflow: auto;
+            box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 15px 30px;
+            text-decoration: none;
+            display: block;
+        }
+        a:hover {
+            background-color: gray;
+            color: white;
+        }
+        .show {
+            display:block;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="btn">Dropdown Menu</button>
+    <div id="dropdown" class="dropdown-content">
+        <a href="#">submenu 1</a>
+        <a href="#">submenu 2</a>
+        <a href="#">submenu 3</a>
+        <a href="#">submenu 4</a>
+        <a href="#">submenu 5</a>
+    </div>
+
+    <script>
+        var btn = document.getElementById('btn');
+
+        function myFunction() {
+            document.getElementById("dropdown").classList.toggle("show");
+        };
+
+        function showFunc(event) {
+            if (!event.target.matches(btn)) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        };
+
+        window.addEventListener("click", showFunc);
+        btn.addEventListener("click", myFunction);
+    </script>
+</body>
+</html>
