@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>modal window</title>
+    <style>
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,.8);
+    }
+    .content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 0 10px;
+        border: 1px solid #888;
+        width: 50%;
+    }
+    #close {
+        color:#aaa;
+        float: right;
+        font-size: 24px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: .7s;
+    }
+    #close:hover {
+        color: black;
+    }
+
+    </style>
+</head>
+<body>
+    <button id="btn">modal window</button>
+    <div id="modal" class="modal">
+        <div class="content">
+            <span id="close">&times;</span>
+            <h3>Modal header</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim optio ab fugiat, minima et laudantium, mollitia vel beatae. Deleniti delectus facilis veniam quo, quasi quod dolores deserunt ipsam vel doloribus.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam perspiciatis expedita ipsum obcaecati quisquam deserunt minima, eligendi corporis laboriosam a reprehenderit iusto, temporibus aspernatur fugit modi tenetur enim quia. Soluta.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet accusamus odit, porro cupiditate eos quasi unde, aut, iste accusantium, voluptatum reprehenderit corrupti molestiae! Commodi, fugiat! Quas, accusamus recusandae cum! Voluptas.</p>
+        </div>
+    </div>
+
+    <script>
+
+        var btn = document.getElementById("btn");
+        var modal = document.getElementById("modal");
+        var span = document.getElementById("close");
+
+        function show() {
+            modal.style.display = "block";
+        };
+        function close() {
+            modal.style.display = "none";
+        };
+        function closeWindow(e) {
+            if (e.target == modal) {
+                modal.style.display = "none";
+            }
+        };
+
+        btn.addEventListener("click", show);
+        span.addEventListener("click", close);
+        window.addEventListener("click", closeWindow);
+
+    </script>
+</body>
+</html>
