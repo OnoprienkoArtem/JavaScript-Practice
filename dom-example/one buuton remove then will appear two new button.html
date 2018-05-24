@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tabs</title>
+    <style>
+        .btn {
+            background-color: yellow;
+            border-color: blue;
+            padding: 10px 15px;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="btn">
+        <button class="btn">1</button>
+    </div>
+    <script>
+        document
+            .getElementById('btn')
+            .addEventListener('click', function (event) {
+                if (event.target.classList.contains('btn')) {
+                    var btn2 = document.createElement('button');
+                    var btn3 = document.createElement('button');
+
+                    btn2.setAttribute('class', 'btn');
+                    btn2.innerHTML = 'two';
+
+                    btn3.setAttribute('class', 'btn');
+                    btn3.innerHTML = 'three';
+
+                    this.appendChild(btn2);
+                    this.appendChild(btn3);
+                    this.removeChild(event.target);
+                };
+            })
+
+    </script>
+</body>
+</html>
