@@ -3,12 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <title>popup</title>
-
+    <style>
+        .popup {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            margin: 50px;
+        }
+        .popup .popup_content {
+            visibility: hidden;
+            width: 100px;
+            background-color: black;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 125%;
+            margin-left: -80px;
+        }
+        .popup .popup_content::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border: 1px solid black;
+        }
+        .popup .show {
+            visibility: visible;
+            animation: fadeIn 1s;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="popup">toggle
         <span class="popup_content" id="popup">Lorem ipsum dolor sit amet.</span>
     </div>
+
 
 </body>
 </html>
