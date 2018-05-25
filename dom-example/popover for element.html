@@ -52,5 +52,19 @@
     </div>
 
 
+    <script>
+
+    var wrPopup = document.getElementsByClassName('popup');
+
+    function popupFunc() {
+        var popUp = document.getElementById('popup');
+        popUp.classList.toggle('show');
+    };
+
+    for (var i = 0; i < wrPopup.length; i++) {
+        wrPopup[i].addEventListener("click", popupFunc);
+    };
+
+    </script>
 </body>
 </html>
