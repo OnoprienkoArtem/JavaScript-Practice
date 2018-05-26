@@ -3,7 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <title>Progress bar</title>
-
+    <style>
+    #progress {
+        position: relative;
+        width: 90%;
+        height: 50px;
+        background-color: silver;
+        border: 1px solid gray;
+    }
+    #progressBar {
+        position: absolute;
+        width: 5%;
+        height: 100%;
+        background-color: red;
+    }
+    #progressLabel {
+        text-align: center;
+        line-height: 50px;
+        color: white;
+    }
+    button {
+        margin: 20px;
+    }
+    </style>
 </head>
 <body>
     <div id="progress">
