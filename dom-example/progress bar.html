@@ -36,5 +36,25 @@
 
     <button id="btn">Start</button>
 
+    <script>
+        function start() {
+            var element = document.getElementById('progressBar');
+            var width = 5;
+            var id = setInterval(shift, 30);
+            function shift() {
+                if (width >= 100) {
+                    clearInterval(id);
+                } else {
+                    width++;
+                    element.style.width = width + '%';
+                    document.getElementById('progressLabel').innerHTML = width * 1 + '%';
+                }
+            }
+        };
+
+        var btn = document.getElementById('btn');
+        btn.addEventListener('click', start);
+
+    </script>
 </body>
 </html>
