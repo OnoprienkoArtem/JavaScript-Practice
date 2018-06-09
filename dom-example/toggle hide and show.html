@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Progress bar</title>
+    <style>
+    #text {
+        width: 50%;
+        text-align: center;
+        padding: 10px;
+        background-color:silver;
+        margin: auto;
+    }
+    </style>
+</head>
+<body>
+    <button id="btn">HIDE</button>
+    <div id="text">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora omnis voluptate facere architecto nisi saepe ea, fugit dignissimos quibusdam minus similique incidunt rem delectus repellendus itaque nulla et quisquam impedit.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae, temporibus, id dolore numquam tenetur sed voluptate maiores, inventore necessitatibus mollitia ab blanditiis aliquam deleniti cum illo dicta ipsum repellat eaque!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum quia, adipisci possimus excepturi obcaecati dolorum repudiandae distinctio, nihil fugit sit labore nam laudantium assumenda ab, optio in non! Amet, dicta.</p>
+    </div>
+    <script>
+        function toggleText() {
+            var text = document.getElementById('text');
+            if (text.style.display === 'none') {
+                text.style.display = 'block';
+            } else {
+                text.style.display = 'none';
+            };
+
+            if (btn.innerHTML == 'HIDE') {
+                btn.innerHTML = 'SHOW';
+            } else  {
+                btn.innerHTML = 'HIDE';
+            }
+        };
+
+        var btn = document.getElementById('btn');
+        btn.addEventListener('click', toggleText);
+    </script>
+</body>
+</html>

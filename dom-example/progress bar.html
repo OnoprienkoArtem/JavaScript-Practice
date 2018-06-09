@@ -4,27 +4,7 @@
     <meta charset="UTF-8">
     <title>Progress bar</title>
     <style>
-    #progress {
-        position: relative;
-        width: 90%;
-        height: 50px;
-        background-color: silver;
-        border: 1px solid gray;
-    }
-    #progressBar {
-        position: absolute;
-        width: 5%;
-        height: 100%;
-        background-color: red;
-    }
-    #progressLabel {
-        text-align: center;
-        line-height: 50px;
-        color: white;
-    }
-    button {
-        margin: 20px;
-    }
+
     </style>
 </head>
 <body>
@@ -37,23 +17,7 @@
     <button id="btn">Start</button>
 
     <script>
-        function start() {
-            var element = document.getElementById('progressBar');
-            var width = 5;
-            var id = setInterval(shift, 30);
-            function shift() {
-                if (width >= 100) {
-                    clearInterval(id);
-                } else {
-                    width++;
-                    element.style.width = width + '%';
-                    document.getElementById('progressLabel').innerHTML = width * 1 + '%';
-                }
-            }
-        };
 
-        var btn = document.getElementById('btn');
-        btn.addEventListener('click', start);
 
     </script>
 </body>
