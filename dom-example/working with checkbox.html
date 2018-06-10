@@ -12,11 +12,12 @@
         var checkbox = document.getElementById('checkbox');
 
         function checkBox() {
-            if (checkbox.checked) {
-                console.log("checkbox checked");
-            } else {
-                console.log("checkbox is cleared");
-            };
+            // if (checkbox.checked) {
+            //     console.log("checkbox checked");
+            // } else {
+            //     console.log("checkbox is cleared");
+            // };
+            checkbox.checked ? console.log("checkbox checked") : console.log("checkbox is cleared");
         };
 
         checkbox.addEventListener("change", checkBox);
