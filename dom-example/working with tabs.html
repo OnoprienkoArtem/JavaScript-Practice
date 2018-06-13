@@ -28,6 +28,46 @@
         </div>
     </div>
     <script>
+        var tab, tabs, tabContent;
+
+        window.onload = function() {
+            tabContent = document.getElementsByClassName('tabContent');
+            tab = document.getElementsByClassName('tab');
+
+            hideTabsContent(1);
+        };
+
+        function hideTabsContent(x) {
+            for (var i = x; i < tabContent.length; i++) {
+                tabContent[i].classList.remove('show');
+                tabContent[i].classList.add('hide');
+                tab[i].classList.remove('first');
+            }
+        };
+
+        function showTabsContent(y) {
+            if (tabContent[y].classList.contains('hide')) {
+                hideTabsContent(0);
+                tab[y].classList.add('first');
+                tabContent[y].classList.remove('hide');
+                tabContent[y].classList.add('show');
+            }
+        };
+
+        function onClick(e) {
+            var target = e.target;
+            if (target.className == 'tab') {
+                for (var i = 0; i < tab.length; i++) {
+                    if(target == tab[i]) {
+                        showTabsContent(i);
+                        break;
+                    }
+                }
+            }
+        }
+
+        tabs = document.getElementById('tabs');
+        tabs.addEventListener('click', onClick);
 
     </script>
 </body>
