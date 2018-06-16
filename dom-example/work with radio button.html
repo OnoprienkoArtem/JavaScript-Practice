@@ -16,6 +16,19 @@
     </form>
 
 
+    <script>
+        var radioButton = document.getElementsByName('groupRadio');
+        var testButton = document.getElementById('testButton');
 
+        function radioFunc() {
+            for (var i = 0; i < radioButton.length; i++) {
+                if (radioButton[i].checked) {
+                    console.log("checked " + parseInt(i + 1));
+                };
+            };
+        };
+
+        testButton.addEventListener("click", radioFunc);
+    </script>
 </body>
 </html>
