@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>  
+
+    <script>
+        var myEmail = 'o.artem.e@gmail.com';
+        var mailRuEmail = 'o.artem.e@mail.ru';
+        var yandexRuEmail = 'o.artem.e@yandex.ru';
+
+        var patternEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        var patternMailRu = /^[a-zA-Z0-9._-]+@mail\.ru$/;
+        var patternYandexRu = /^[a-zA-Z0-9._-]+@yandex\.ru$/;
+        
+
+        function checkinEmail(emailAddress) {
+            if (patternMailRu.test(emailAddress)) {
+                console.log('mail.ru is not correct address');
+            } else if (patternYandexRu.test(emailAddress)) {
+                console.log('yandex.ru is not correct address');
+            } else if (patternEmail.test(emailAddress)) {
+                console.log('mail is correct');
+            } else {
+                console.log('mail wrong');
+            }
+        };
+
+        checkinEmail(myEmail);
+        checkinEmail(mailRuEmail);
+        checkinEmail(yandexRuEmail);  
+
+
+    </script>
+</body>
+</html>
