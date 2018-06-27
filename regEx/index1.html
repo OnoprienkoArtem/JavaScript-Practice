@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .wrong {
+            box-shadow: 0px 0px 10px 5px red;
+        }
+
+        .correct {
+            box-shadow: 0px 0px 10px 5px green;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="form_id" onchange="validate('form_id', 'email');">
+        <input type="text" id="email" name="email"/>
+    </form>
+
+    <script>
+        function validate(form_id, email) {
+            var patternEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            var address = document.forms[form_id].elements[email].value;
+            var emailField = document.getElementById("email");
+
+            if(patternEmail.test(address)) {
+                 emailField.classList.add('correct');                
+            } else {
+                emailField.classList.add('wrong');
+            }   
+        }    
+    
+    </script>    
+</body>
+</html>
