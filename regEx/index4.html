@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .red {
+            color: red;
+        }
+
+        .tooltip {
+            color: grey;
+            font-size: 12px;
+        }
+
+        .call-to-action {
+            font-size: 13px;
+            font-style: italic;
+        }
+
+        .granted {
+            border: 2px solid green;
+        }
+
+        .denied {
+            border: 2px solid red;
+        }
+
+        .error {
+            background-color: red;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 2px;
+        }
+
+        #comment,
+        .hide {
+            display: none;
+        }
+
+        a {
+            text-decoration: none;
+            border-bottom: 1px dashed #1F7EDB;
+            color: #1F7EDB;
+        }
+
+        input[type=submit] {
+            background-color: green;
+            border: 0;
+            color: white;
+            font-weight: bold;
+            margin-right: 35px;
+            padding: 10px;
+            -webkit-border-radius: 8px;
+            -moz-border-radius: 8px;
+            border-radius: 8px;
+        }
+
+        input[type=reset] {
+            background-color: #DF0400;
+            border: 0;
+            color: white;
+            padding: 10px;
+            font-weight: bold;
+            -webkit-border-radius: 8px;
+            -moz-border-radius: 8px;
+            border-radius: 8px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+
+<!-- 
+имя получателя: латинские/русские буквы и пробелы
+телефон: в формате примера (скобки, дефис, числа)
+улица: латинские/русские буквы и пробелы
+дом: числа, дефис, слеш, буквы (после числа)
+квартира: число
+email: латиница, собака, точки, дефисы
+При потере фокуса на поле если введены неправильные символы — выводим красную рамку, выводим текст снизу/сверху от поля 
+-->
+
+    <h2>Оформление заказа</h2>
+    <hr width="500" align="left">
+    <form>
+        <input type="hidden" name="date" value="11 September 2013">
+        <input type="hidden" name="time" value="20:55">
+        <table border=0>
+            <tr>
+                <td width=160>
+                    <label for="client">Имя получателя</label>
+                </td>
+                <td width=400>
+                    <input type="text" name="client" id="client" placeholder="Name" maxlength="20">
+                    <span class="red">*</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="phone">Телефон</label>
+                </td>
+                <td>
+                    <input type="text" name="phone" id="phone" placeholder="Phone number" maxlength="15">
+                    <span class="red">*</span>
+                    <select name="phone_type">
+                        <option value="mobile">Мобильный</option>
+                        <option value="home">Домашний</option>
+                        <option value="work">Рабочий</option>
+                    </select>
+                    <br>
+                    <span class="tooltip">Например, (012) 345-67-89</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="city">Город</label>
+                </td>
+                <td>
+                    <select name="city" id="city">
+                        <option value="empty">выберите город</option>
+                        <option value="kiev">Киев</option>
+                        <option value="odessa">Одесса</option>
+                        <option value="lvov">Львов</option>
+                        <option value="dnepr">Днепропетровск</option>
+                    </select>
+                    <span class="red">*</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="delivery">Способ доставки</label>
+                </td>
+                <td>
+                    <select name="delivery" id="delivery" disabled>
+                        <option value="empty">выберите способ доставки</option>
+                        <option value="courier">Курьером</option>
+                        <option value="self">Самовывоз</option>
+                    </select>
+                    <img valign="middle" src="http://s.cdpn.io/62886/info.png" alt="info" />
+                </td>
+            </tr>
+            <tr class="address-block">
+                <td>
+                    <label for="address">Адрес получателя</label>
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>
+                                <input type="text" id="street" name="street" class="address" placeholder="Street" maxlength="30" disabled>
+                            </td>
+                            <td>
+                                <input type="text" id="house" name="house" placeholder="House" class="address" size="5" maxlength="10" disabled>
+                            </td>
+                            <td>
+                                <input type="text" id="app" name="app" placeholder="Appartment" class="address" maxlength="10" disabled>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tooltip">
+                                Улица
+                            </td>
+                            <td class="tooltip">
+                                Дом
+                            </td>
+                            <td class="tooltip">
+                                Квартира
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr class="address-block">
+                <td colspan=2>
+                    <textarea name="info" id="info" cols="55" rows="8" disabled>
+                        Доставка в пределах города бесплатная при заказе на сумму свыше 1500 грн. Для заказов на меньшую сумму стоимость доставки
+                        35 грн. Товары из раздела "Активный отдых и туризм", "Дом, сад" и "Детский мир" доставляются бесплатно
+                        при сумме заказа от 500 грн. Товары из раздела "Бытовая техника" и "Интерьер" по Киеву доставляются
+                        бесплатно при сумме заказа от 800 грн.
+                    </textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="payment">Оплата</label>
+                </td>
+                <td>
+                    <select name="payment" id="payment">
+                        <option value="cash">Наличная</option>
+                        <option value="noncash">Безналичная</option>
+                        <option value="credit6">Кредит "6"</option>
+                        <option value="credit12">Кредит "12"</option>
+                        <option value="credit24">Кредит "24"</option>
+                    </select>
+                    <img valign="middle" src="http://s.cdpn.io/62886/info.png" alt="info" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="email">Электронная почта</label>
+                    <br>
+                    <span class="tooltip">Для отслеживания состояния заказа</span>
+                </td>
+                <td>
+                    <input type="text" id="email" name="email" size="40" placeholder="Email" maxlength="30">
+                    <br>
+                    <span class="call-to-action">Узнавайте первыми о спецпредложениях, скидках и новинках</span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan=2>
+                    <a href="#" id="comment-link" class="call-to-action">Добавить комментарий к заказу</a>
+                    <br>
+                    <div id="comment">
+                        <textarea name="comment" cols="55" rows="5" maxlength="512"></textarea>
+                        <br>
+                        <span class="tooltip">Укажите комментарий длиной не более 512 символов</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan=2>
+                    <input type="checkbox" name="present" id="present">
+                    <label for="present">Для подарка</label>
+                    <img valign="middle" src="http://s.cdpn.io/62886/info.png" alt="info" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan=2>
+                    <input type="submit" value="Заказ подтверждаю">
+                    <input type="reset" value="Очистить данные">
+                    <br>
+                    <span class="tooltip">
+                        Подтверждая заказ, я соглашаюсь
+                        <br>с пользовательским соглашением
+                        <img valign="middle" src="http://s.cdpn.io/62886/info.png" alt="info"
+                        />
+                    </span>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        window.onload = onLoad;
+
+        function onLoad() {
+            var client = document.getElementById("client"),
+                phone = document.getElementById("phone"),
+                email = document.getElementById("email"),
+                city = document.getElementById("city"),
+                street = document.getElementById("street"),
+                house = document.getElementById("house"),
+                appartment = document.getElementById("app"),
+                delivery = document.getElementById("delivery"),
+                commentLink = document.getElementById("comment-link"),
+                commentArea = document.getElementById("comment");
+
+            if (client && phone && email) {
+                client.onchange = onClientChange;
+                phone.onchange = onPhoneChange;
+                email.onchange = onEmailChange;
+            }
+
+            if (city && delivery) {
+                city.onchange = onCityChange;
+                delivery.onchange = onDeliveryChange;
+            }
+
+            if (street && house && appartment) {
+                street.onchange = onStreetChange;
+                house.onchange = onHouseChange;
+                appartment.onchange = onAppartmentChange;
+            }
+
+            if (commentLink && commentArea) {
+                commentLink.onclick = toggleCommentArea;
+            }
+
+            function grantDeny(element, regexp, errorMessage) {
+                var value = element.value;
+                console.log(value);
+
+                if (regexp.test(value)) {
+                    element.classList.remove("denied");
+                    element.classList.add("granted");
+                    console.log(element.className);
+                } else {
+                    element.classList.remove("granted");
+                    element.classList.add("denied");
+                    console.log(element.className);
+                    if ((element.previousSibling.nodeType == 3) || (element.previousSibling.className != "error")) {
+                        var msgElem = document.createElement('span');
+                        msgElem.className = "error";
+                        msgElem.innerHTML = errorMessage + " ";
+                        element.parentNode.insertBefore(msgElem, element);
+                    }
+                }
+            }
+
+            function onClientChange() {
+                var element = this,
+                    errorMessage = " Имя задано неправильно ";
+                regexp =
+                    /^[А-Я]{0,1}[а-я]{1,15}( [А-Я]{0,1}[а-я]{1,15}){0,1}$|^[A-Z]{0,1}[a-z]{1,15}( [A-Z]{0,1}[a-z]{1,15}){0,1}$/; //Пропускаем только латинские или русские буквы и пробел между первым и вторым словом (если второе слово есть). Оба слова могут начинаться с большой буквы
+                grantDeny(element, regexp, errorMessage);
+            }
+
+            function onPhoneChange() {
+                var element = this,
+                    regexp = /^\([0-9]{3}\) [0-9]{3}-[0-9]{2}-[0-9]{2}$/; //Пропускаем номер строго в формате (012) 345-67-89
+                errorMessage = " Номер задан неправильно ";
+                grantDeny(element, regexp, errorMessage);
+            }
+
+            function onEmailChange() {
+                var element = this,
+                    regexp = /^([a-z0-9_-]{1,15}\.){0,3}[a-z0-9_-]{1,15}@[a-z0-9_-]{1,15}\.[a-z]{2,6}$/; //Пропускаем до 15 символов a-z0-9_- перед собачкой, также это может быть до 4 слов, разделенных точками. Затем собачка и имя домена (от 1 до 15 символов). Затем доменная зона - от 2 до 6 латинских букв
+                errorMessage = " Email задан неправильно ";
+                grantDeny(element, regexp, errorMessage);
+            }
+
+            function onCityChange() {
+                var value = this.value;
+
+                if (value !== "empty") {
+                    delivery.disabled = false;
+                    this.classList.remove("denied");
+                    if (delivery.value === "courier") {
+                        changeAddressState(false);
+                    }
+                } else {
+                    delivery.disabled = true;
+                    changeAddressState(true);
+                    this.classList.add("denied");
+                }
+            }
+
+            function onDeliveryChange() {
+                var value = this.value,
+                    state = false,
+                    addressBlock = document.querySelector("tr.address-block");
+
+                if (value !== "courier") {
+                    addressBlock.classList.add("hide");
+                    addressBlock.nextElementSibling.classList.add("hide");
+                    state = true;
+                    changeAddressState(state);
+                } else {
+                    addressBlock.classList.remove("hide");
+                    addressBlock.nextElementSibling.classList.remove("hide");
+                    changeAddressState(state);
+                }
+            }
+
+            function changeAddressState(state) {
+                var inputs = document.querySelectorAll(".address"),
+                    len = inputs.length,
+                    i;
+                console.log(inputs);
+
+                for (i = 0; i < len; i++) {
+                    inputs[i].disabled = state;
+                }
+            }
+
+            function onStreetChange() {
+                var element = this,
+                    regexp = /^[а-яА-Я0-9-\. ]{0,30}$|^[a-zA-Z0-9-\. ]{0,30}$/; //Пропускаем русские или латинские буквы, цифры, дефисы, пробелы и точки
+                errorMessage = " Улица задана неправильно ";
+                grantDeny(element, regexp, errorMessage);
+            }
+
+            function onHouseChange() {
+                var element = this,
+                    regexp =
+                    /^[0-9-\/ ]{0,5}[а-яА-Я]{0,1}[ -]{0,1}[0-9]{0,2}$|^[0-9-\/ ]{0,5}[a-zA-Z]{0,1}[ -]{0,1}[0-9]{0,2}$/; //Пропускаем от 0 до 5 цифр (возможно со слешем и пробелами), затем 1 русскую или латинскую букву (если она есть), затем пробел или дефис (если они есть) и 2 цифры если они есть)
+                errorMessage = " Дом задан неправильно ";
+                grantDeny(element, regexp, errorMessage);
+            }
+
+            function onAppartmentChange() {
+                var element = this,
+                    regexp = /^[0-9]{0,10}$/; //Пропускаем только цифры
+                errorMessage = " Квартира задана неправильно ";
+                grantDeny(element, regexp, errorMessage);
+            }
+
+            function toggleCommentArea() {
+                var style = commentArea.style;
+                if (style.display === "block") {
+                    style.display = "none";
+                } else {
+                    style.display = "block";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
