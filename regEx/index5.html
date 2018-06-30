@@ -78,7 +78,44 @@
     </form>
 
     <script>
+        window.onload = onLoad;
 
+        function onLoad() {
+            var email = document.getElementById("email");
+
+            if (email) {
+                email.onchange = onEmailChange;
+            }       
+          
+            function grantDeny(element, regexp, errorMessage) {
+                var value = element.value;
+                console.log(value);
+
+                if (regexp.test(value)) {
+                    element.classList.remove("denied");
+                    element.classList.add("granted");
+                    console.log(element.className);
+                } else {
+                    element.classList.remove("granted");
+                    element.classList.add("denied");
+                    console.log(element.className);
+                    
+                    if ((element.previousSibling.nodeType == 3) || (element.previousSibling.className != "error")) {
+                        var msgElem = document.createElement('span');
+                        msgElem.className = "error";
+                        msgElem.innerHTML = errorMessage + " ";
+                        element.parentNode.insertBefore(msgElem, element);
+                    }
+                }
+            }      
+
+            function onEmailChange() {
+                var element = this,
+                    regexp = /^([a-z0-9_-]{1,15}\.){0,3}[a-z0-9_-]{1,15}@[a-z0-9_-]{1,15}\.[a-z]{2,6}$/; 
+                errorMessage = " Email задан неправильно ";
+                grantDeny(element, regexp, errorMessage);
+            } 
+        }
     </script>
 </body>
 
