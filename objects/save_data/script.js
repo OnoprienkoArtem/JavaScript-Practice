@@ -41,7 +41,21 @@ function getValue(event) {
     console.log(obj);
 }
 
+var vous = document.getElementsByName("vous");
+for (var i = 0; i < vous.length; i++) {
+    vous[i].addEventListener("change", getValueVous);
+}
+function getValueVous(event) {
+    obj['vous'] = event.target.value;
+    console.log(obj);
+}
 
+var age = document.getElementById('age');
+age.addEventListener("change", getValueAge);
+function getValueAge(event) {
+    obj['age'] = event.target.value;
+    console.log(obj);
+}
 
 
 
