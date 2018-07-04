@@ -57,5 +57,25 @@ function getValueAge(event) {
     console.log(obj);
 }
 
+var mail = document.getElementById('mail');
+mail.addEventListener("change", getValueMail);
+function getValueMail(event) {
+    obj['mail'] = event.target.value;
+    console.log(obj);
 
+
+    var sObj = JSON.stringify(obj);
+    localStorage.setItem("object", sObj);
+
+    console.log('2.', localStorage.object);
+
+
+    retObj = JSON.parse(localStorage.getItem("object"));
+
+    retObj_0 = JSON.parse(localStorage.getItem("object_0"));
+
+
+    showObj(retObj_0, retObj);
+    console.log(Object.assign(retObj_0, retObj)); 
+}
 
