@@ -63,19 +63,29 @@ function getValueMail(event) {
     obj['mail'] = event.target.value;
     console.log(obj);
 
-
     var sObj = JSON.stringify(obj);
     localStorage.setItem("object", sObj);
-
     console.log('2.', localStorage.object);
 
-
     retObj = JSON.parse(localStorage.getItem("object"));
-
     retObj_0 = JSON.parse(localStorage.getItem("object_0"));
-
 
     showObj(retObj_0, retObj);
     console.log(Object.assign(retObj_0, retObj)); 
 }
 
+function showObj(obj_1, obj_2) {
+    var globObj = Object.assign(obj_1, obj_2); 
+    console.dir(globObj);
+}
+
+function checks() {
+    var cbx = document.getElementsByTagName("input")
+    var arrCh = [];
+    for (i = 0; i < cbx.length; i++) {
+        if (cbx[i].type == "checkbox" && cbx[i].checked) {
+            arrCh.push(cbx[i].value);                         
+        }
+    }
+    console.log(arrCh); 
+}
