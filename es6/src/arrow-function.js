@@ -37,15 +37,17 @@ let log_arrow = () => console.log('Logging');
 log_arrow();
 
 
+let multiply = function (x, y) {
+    let result = x * y;
+    return result;
+}
+console.log(multiply(2, 5));
 
-
-
-
-
-
-
-
-
+let multiply_arrow = (x, y) => {
+    let result = x * y;
+    return result;
+}
+console.log(multiply_arrow(5, 2));
 
 
 
