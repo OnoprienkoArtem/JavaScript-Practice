@@ -50,4 +50,15 @@ let multiply_arrow = (x, y) => {
 console.log(multiply_arrow(5, 2));
 
 
+let getPerson = function () {
+    return {
+        name: 'Tom'
+    };
+}
+console.log(getPerson());
+
+let getPerson_arrow = () => ({
+    name: 'Tom'
+});
+console.log(getPerson_arrow());
 
