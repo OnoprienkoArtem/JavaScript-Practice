@@ -62,3 +62,11 @@ let getPerson_arrow = () => ({
 });
 console.log(getPerson_arrow());
 
+
+// IIFE
+(function () {
+    console.log("IIFE");
+})();
+
+(() => console.log('IIFE'))();
+
