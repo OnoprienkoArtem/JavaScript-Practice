@@ -84,3 +84,13 @@ console.log(sum);
 
 let squared = numbers.map(n => n * n);
 console.log(squared);
+
+
+let person = {
+    name: 'Bob',
+    greet: function () {
+        console.log('Hello, my name is ' + this.name);
+        console.log(this);
+    }
+}
+person.greet();
