@@ -94,3 +94,18 @@ let person = {
     }
 }
 person.greet();
+
+
+// closures
+let person_1 = {
+    name: 'Tom',
+    greet: function () {
+        var that = this;
+        window.setTimeout(function () {
+            console.log('Hello, my name is ' + that.name);
+            console.log(that);
+            console.log(this);
+        }, 2000);
+    }
+}
+person_1.greet();
