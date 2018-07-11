@@ -109,3 +109,14 @@ let person_1 = {
     }
 }
 person_1.greet();
+
+let person_arrow = {
+    name: 'Tim',
+    greet: function () {
+        window.setTimeout(() => {
+            console.log('Hello, my name is ' + this.name);
+            console.log(this);
+        }, 2000);
+    }
+}
+person_arrow.greet();
