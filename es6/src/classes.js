@@ -18,7 +18,14 @@ class Task {
         }
     }
 
+    complete() {
+        this.done = 1;
+        console.log(`задача "${this.title}" выполнена`);
+    }
 
+    static getDefaultTitle() {
+        return 'Задача';
+    }
 }
 
 
