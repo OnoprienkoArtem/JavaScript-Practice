@@ -5,6 +5,14 @@ class Task {
         Task.count += 1;
         console.log('Создание задачи');
     }
+
+    get done() {
+        return this._done === true ? 'Выполнена' : 'Не выполнена';
+    }
+
+
+
+
 }
 
 
