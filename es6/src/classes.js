@@ -10,7 +10,13 @@ class Task {
         return this._done === true ? 'Выполнена' : 'Не выполнена';
     }
 
-
+    set done(value) {
+        if (value !== undefined && typeof value === 'boolean') {
+            this._done = value;
+        } else {
+            console.log('Ошибка! Укажите значение true или false');
+        }
+    }
 
 
 }
