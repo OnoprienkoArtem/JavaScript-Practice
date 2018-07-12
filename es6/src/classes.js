@@ -28,4 +28,15 @@ class Task {
     }
 }
 
+Task.count = 0;
 
+let task = new Task('убрать комнату');
+
+console.log(typeof Task);
+console.log(typeof task);
+console.log(task instanceof Task);
+
+console.log(task.title);
+
+task.complete();
+console.log(task.done);
