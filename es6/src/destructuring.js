@@ -27,4 +27,26 @@ console.log(js, php, py, rb);
 // console.log(low, mid, high, higher);
 
 
+function computeScore([low, mid]) {
+    console.log(low, mid);
+}
+// computeScore([5, 6]);
 
+
+function getScore() {
+    return [1, 2, 3]
+}
+
+let score_2 = getScore();
+console.log(score_2);
+let [low, mid, high] = getScore();
+console.log(low, mid, high);
+
+
+let yes = 'YES';
+let not = 'NOT';
+
+[yes, not] = [not, yes];
+
+console.log('yes is', yes);
+console.log('not is', not);
