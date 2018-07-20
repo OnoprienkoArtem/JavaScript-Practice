@@ -22,14 +22,18 @@ class Task {
         this.done = true;
         console.log(`Задачи "${this.title}" выполнена`);
     }
-
-
 }
 
+Task.count = 0;
 
+class SubTask extends Task {
+    constructor(title, parent) {
+        super(title);
+        this.parent = parent;
+        console.log('Создание подзадачи');
+    }
 
-
-
+}
 
 
 
