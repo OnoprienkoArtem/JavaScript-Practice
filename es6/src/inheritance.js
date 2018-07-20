@@ -14,6 +14,15 @@ class Task {
         this._title = value;
     }
 
+    static getDefaultTitle() {
+        return 'Задача';
+    }
+
+    complete() {
+        this.done = true;
+        console.log(`Задачи "${this.title}" выполнена`);
+    }
+
 
 }
 
