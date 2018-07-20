@@ -33,6 +33,10 @@ class SubTask extends Task {
         console.log('Создание подзадачи');
     }
 
+    complete() {
+        super.complete();
+        console.log(`Подзадача "${this.title}" выполнена`);
+    }
 }
 
 
