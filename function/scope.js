@@ -16,6 +16,8 @@ function first() {
 first();
 
 
+
+// lecsical scope
 function grandfather() {
     var name = 'John';
     // likes не доступно здесь
@@ -30,3 +32,25 @@ function grandfather() {
         }
     }
 }
+
+
+
+// closure
+
+function greet() {
+    var name = 'John';
+
+    return function() {
+        console.log('Hi ' + name + '!');
+    }
+}
+
+greet();  //ничего не произойдет
+
+// возвращение функции из greet() сохранена в greetLetter
+var greetLetter = greet();
+
+// вызов
+greetLetter();
+// or
+greet()();
