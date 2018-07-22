@@ -1,15 +1,17 @@
+// function expression
 var firstFunction = function() {
     console.log('Run firstFunction');
 };
 
 
+
+// function declaration
 function runFunction(param) {
     console.log('Run runFanction');
     param();
 };
 
 runFunction(firstFunction);
-
 
 
 
@@ -27,12 +29,9 @@ console.log(runSecondFunction(seconfFunction));
 
 
 
-
-
 setTimeout(function() {
     console.log('Anonymec Function.');
 }, 2000);
-
 
 
 var setTO = function() {
@@ -55,4 +54,13 @@ setTimeout(setTO, 2000)
 
 
 
+// arrow function
+let serSum = (a, b) => a + b;
 
+let serSum = a => a + 2;
+
+let serSum = (a, b) => { return a + b; }
+
+let serSum = () => {
+    return new Date().getFullYear();
+};    
