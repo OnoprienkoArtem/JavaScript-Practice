@@ -2,6 +2,7 @@ var firstFunction = function() {
     console.log('Run firstFunction');
 };
 
+
 function runFunction(param) {
     console.log('Run runFanction');
     param();
@@ -39,3 +40,19 @@ var setTO = function() {
 }
 
 setTimeout(setTO, 2000)
+
+
+
+// IIFE
+(function() {
+    console.log('IIFE');
+}()); 
+
+//or
+(function () {
+    console.log('IIFE');
+})(); 
+
+
+
+
