@@ -82,10 +82,38 @@ let userC = userA;
 console.log(userA === userB);
 console.log(userA === userC);
 
+// copy object  -----------------------------
+let products = {
+    fruit: 'banana',
+    vegetable: 'carrot',
+    juice: 'orange'
+};
+
+let key;
+let newProducts = {};
+
+for (key in products) {
+    newProducts[key] = products[key];
+}
+
+newProducts.fruit = 'apple';
+console.log(products);
+console.log(newProducts);
 
 
 
 
+let goods = {
+    fruit: 'banana',
+    vegetables: 'carrot'
+}
+
+let newGoods = {
+    juice: 'orange'
+}
+
+let allGoods = Object.assign({}, goods, newGoods);
+console.log(allGoods);
 
 
 
