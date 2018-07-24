@@ -117,6 +117,28 @@ console.log(allGoods);
 
 
 
+// iteration   ----------
+
+let productsA = {
+    fruit: 'banana',
+    vegetable: 'carrot',
+    juice: 'orange'
+};
+
+for (let item in productsA) {
+    console.log('key: ' + item + ', value: ' + productsA[item]);
+}
+
+
+// Object.keys() - return array keys = 'string'
+let productsB = {
+    fruit: 'banana',
+    vegetable: 'carrot',
+    juice: 'orange'
+};
+
+let productsName = Object.keys(productsB);
+console.log(productsName);
 
 
 
