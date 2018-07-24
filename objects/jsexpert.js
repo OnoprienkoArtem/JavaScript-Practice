@@ -157,5 +157,46 @@ const newUser = {...programmer, ...userW};
 console.log(newUser);
 
 
+// destructuring
+let productsD = {
+    juice: 'orange',
+    fruit: 'banana',
+    vegetable: 'carrot'
+}
+
+const { juice, fruit, vegetable } = productsD;
+console.log(fruit);
+
+
+
+let productsF = {
+    juice: 'orange',
+    fruit: 'banana',
+    vegetable: 'carrot'
+}
+
+const { juice: j, fruit: b, vegetable: v } = productsF;
+console.log(j);
+
+
+
+let productsE = {
+    juice: 'orange',
+    fruit: 'banana'
+}
+
+const { juice: jj, fruit: f, vegetableE = 'carrot' } = productsE;
+console.log(f);
+
+
+
+let productsW = {
+    juice: 'orange',
+    fruit: 'banana',
+    vegetable: 'carrot'
+}
+
+const { juiceW, ...rest } = productsW;
+console.log(rest);
 
 
