@@ -1,0 +1,98 @@
+let object = {}; //literal
+let newObject = new Object();
+// let createObject = Object.create();
+
+
+// let user = {
+//     firstName: 'John',
+//     secondName: 'Connor'
+// };
+
+let user = {};
+
+user.firstName = 'John';
+user['secondName'] = 'Connor';
+
+
+let user1 = {
+    firstName: 'John',
+    secondName: 'Connor',
+    login: 'T2',
+    password: 'doomsday',
+    age: 25
+};
+
+// get property
+let name = user1.firstName;
+let surname = user1['secondName'];
+
+// change property
+user1.password = 'greenday';
+
+// delete property
+delete user1.secondName;
+
+console.log(user1);
+
+
+for (let key in user1) {
+    console.log(user1[key]);
+    console.log(key);
+}
+
+
+let user2 = {
+    firstNmae: 'John',
+    age: 25,
+    info: {
+        birthDay: '12/12/1800',
+        language: 'English'
+    },
+    showAge: function() {
+        return this.age;
+    }
+}
+
+console.log(user2.info.language); 
+console.log(user2.showAge());
+
+
+
+let age = {
+    18: 'Teenager'
+}
+
+// console.log(age.18);     Error
+console.log(age['18']);
+
+
+
+let userA = {
+    age: 25,
+    sex: 'male'
+}
+
+let userB = {
+    age: 25,
+    sex: 'male'
+}
+
+let userC = userA;
+
+console.log(userA === userB);
+console.log(userA === userC);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
