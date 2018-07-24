@@ -113,6 +113,7 @@ let newGoods = {
 }
 
 let allGoods = Object.assign({}, goods, newGoods);
+
 console.log(allGoods);
 
 
@@ -141,7 +142,19 @@ let productsName = Object.keys(productsB);
 console.log(productsName);
 
 
+// spread 
+const programmer = {
+    name: 'David',
+    age: 30,
+    editor: 'VS Code'
+}
 
+const userW = {
+    editor: 'sublime text'
+}
+
+const newUser = {...programmer, ...userW};
+console.log(newUser);
 
 
 
