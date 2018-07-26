@@ -68,3 +68,18 @@ const text2 = good + ', ' + great;
 console.log(text2);
 //лучше использовать +
 
+
+// шаблонные строки
+const name = 'John';
+console.log(`Hello ${name}`);
+
+const nameW = 'Life is good, life is great';
+function songName(words) {
+    const song = 'Good Song:';
+    return `${song} ${words}`;
+}
+console.log(`Now you are listening ${songName(nameW)}`);
+
+
+
+
