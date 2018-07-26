@@ -29,6 +29,7 @@ console.log(positon); // 22
 const language = ' JavaScriot ';
 console.log(language);
 const trimLanguage = language.trim(); // Удаляет пробелы с начала и конца строки
+
 console.log(trimLanguage);
 
 
@@ -81,5 +82,49 @@ function songName(words) {
 console.log(`Now you are listening ${songName(nameW)}`);
 
 
+
+
+
+//NUMBER
+const num = 35;
+const bigNumber = new Number(55);
+
+new Number('55'); // 55
+new Number('string');  //NaN
+
+
+
+//BOOLEAN
+const bool = false;
+const objBool = new Boolean(false);
+
+console.log(typeof bool); // boolean
+console.log(typeof objBool); // object 
+
+//'', 0, null, false, NaN, undefined = false
+
+
+//DATE
+// число миллисекунд от 1 января 1970
+const currentDate = new Date();
+console.log(currentDate);
+
+// getFullYear
+// getMonth
+// getDate
+// getHours
+// getMinuter
+// getTime();
+// 
+
+
+// MATH
+
+// Math.floor();
+// Math.ceil();
+// Math.round();
+
+// Math.max();
+// Math.min();
 
 
