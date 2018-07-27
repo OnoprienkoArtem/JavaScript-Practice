@@ -128,6 +128,34 @@ console.log(arrayIndex.indexOf('three')); // 2
 console.log(arrayIndex.indexOf('six')); // -1
 
 
+// .....  ES6  ...... //
+
+// SPREAD - оператор помогает как конкатенировать, так и копировать массив, при этом создается именно копия, а не 
+// передача по ссылке.
+
+// конкатенация
+let arrayS = ['Angular', 'Rx'];
+let newArr = ['React', ...arrayS, 'Vue'];
+console.log(newArr); // ["React", "Angular", "Rx", "Vue"]
+
+// копирование (полная копия)
+let newArrW = ["React", "Angular", "Rx", "Vue"];
+let fullCopy = [...newArrW];
+console.log(fullCopy); // ["React", "Angular", "Rx", "Vue"]
 
 
+// деструктуризация
+let arrD = ['one', 'two', 'three'];
+let [one, two, three] = arrD;
+console.log(one); // one
+console.log(three); // three
 
+let oneD, twoD, rest;
+[oneD, twoD] = [1, 2];
+console.log(oneD); // 1
+console.log(twoD); // 2
+
+[oneD1, twoD1, ...rest] = [1, 2, 3, 4, 5];
+console.log(oneD1); // 1
+console.log(twoD1); // 2
+console.log(rest); // [3, 4, 5]
