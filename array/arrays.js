@@ -52,6 +52,31 @@ arrayUnshift.unshift(true);
 console.log(arrayUnshift); //[true, "html", "css", "js"]
 
 
+// shift() - удаляет и возвращает первый элемент массива.
+const arrayShift = ['html', 'css', 'js'];
+console.log(arrayShift); // ["html", "css", "js"]
+
+const deleted1 = arrayShift.shift();
+console.log(arrayShift); // ["css", "js"]
+console.log(deleted1); // html
+
+
+// join() - преобразовывает массив в строку с заданным разделителем. Если разделитель не указать, то разделяет запятой.
+const arrayJoin = ['html', 'css', 'js'];
+console.log(arrayJoin); // ["html", "css", "js"]
+
+const joind = arrayJoin.join();
+console.log(joind); // html,css,js
+
+const dashjoind = arrayJoin.join('---');
+console.log(dashjoind); // html---css---js
+
+
+// split() - разделяет строку на массив по переданному разделителю.
+const names = 'html, css, js';
+
+const arrSplit = names.split(', ');
+console.log(arrSplit); // ["html", "css", "js"]
 
 
 
