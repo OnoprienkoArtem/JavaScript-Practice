@@ -107,7 +107,25 @@ console.log(arraySpliceQ); // ["one", "two", "three", "ELEMENT", "four", "five"]
 console.log(lineQ); // []
 
 
+// reverse() - сортирует массив в обратном порядке.
+const arrayRev = ['one', 'two', 'three', 'four', 'five'];
+const rev = arrayRev.reverse();
+console.log(rev); // ["five", "four", "three", "two", "one"]
 
+
+// concat() - cоздает и возвращает новый массив, содержащий элементы исходного массива, и значения всех переданных аргументов.
+const arrayConcat = ['one', 'two', 'three', 'four', 'five'];
+const conc = arrayConcat.concat('six', 'seven');
+const concAr = arrayConcat.concat(['six', 'seven', 'eight']);
+console.log(conc); // ["one", "two", "three", "four", "five", "six", "seven"]
+console.log(concAr); // ["one", "two", "three", "four", "five", "six", "seven", "eight"]
+
+
+// indexOf() - возвращает номер (index) искомого элемента в массиве. Если элемент не найден, то вернет -1.
+// lastIndexOf() - выполнфет то же самое, но поиск начинается с конца.
+const arrayIndex = ['one', 'two', 'three', 'four', 'five'];
+console.log(arrayIndex.indexOf('three')); // 2
+console.log(arrayIndex.indexOf('six')); // -1
 
 
 
