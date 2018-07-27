@@ -79,6 +79,32 @@ const arrSplit = names.split(', ');
 console.log(arrSplit); // ["html", "css", "js"]
 
 
+// slice() - копирует часть массива от и до (не включая это значение)
+let arraySlice = ['Paul', 'John', 'Bill', 'Joe', 'Mark'];
+
+console.log(arraySlice.slice(0, 3)); // ["Paul", "John", "Bill"]
+console.log(arraySlice.slice(3)); // ["Joe", "Mark"]
+console.log(arraySlice.slice(1, -1)); //["John", "Bill", "Joe"]
+console.log(arraySlice.slice(-3, -2)); // ["Bill"]
+
+
+// splice() - универсальный метод, выполняющий вставку или удаление элементов массива.
+let arraySplice = ['one', 'two', 'three', 'four', 'five'];
+const line = arraySplice.splice(2, 1);
+
+console.log(arraySplice); // ["one", "two", "four", "five"]
+console.log(line); // ["three"]
+
+// вставка
+const arraySpliceW = ['one', 'two', 'three', 'four', 'five'];
+const lineW = arraySpliceW.splice(2, 2, 'new', 'ELEMENT');
+console.log(arraySpliceW); // ["one", "two", "new", "ELEMENT", "five"]
+console.log(lineW); // ["three", "four"]
+
+const arraySpliceQ = ['one', 'two', 'three', 'four', 'five'];
+const lineQ = arraySpliceQ.splice(3, 0, 'ELEMENT');
+console.log(arraySpliceQ); // ["one", "two", "three", "ELEMENT", "four", "five"]
+console.log(lineQ); // []
 
 
 
