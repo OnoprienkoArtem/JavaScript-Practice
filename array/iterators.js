@@ -103,3 +103,19 @@ let newArrayFilter_3 = arrayFilter_3.filter(item => {
     return newNumber > 50;
 });
 console.log(newArrayFilter_3); // [12, 15]
+
+
+
+// EVERY и SOME (возвращают true или false);
+// some() - вернет true если хотя бы один из элементов массива, при выполнении callback функции, вернет true.
+let arrayNumber = [12, 1, 5, 15, 7, 9, 6, 4];
+let newArraySome = arrayNumber.some(item => {
+    return item > 10;
+});
+console.log(newArraySome); // true
+
+// every() - вернет true если все элементы массива, при выполнении callback функции, вернут true.
+let newArrayEvery = arrayNumber.every(item => {
+    return item > 10;
+});
+console.log(newArrayEvery); // false
