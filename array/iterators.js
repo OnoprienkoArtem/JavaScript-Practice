@@ -41,3 +41,18 @@ for (let i of arrayForOfCondition) {
     console.log(i);
 }
 // 5
+
+
+
+// forEach - этот метод перебирает все элементы массива и для каждого элемента вызывает callback функцию.
+// может принимать три аргумента (текущий элемент масива, индекс, массив)
+// ни чего не возвращает
+// в этом методе не работают continue и brake
+// предназначан только для перебора массива
+const arrayForEach = ['one', 'two', 'three', 'four', 'five'];
+arrayForEach.forEach(function(item, index) {
+    console.log(`index: ${index}`, `item: ${item}`);
+});
+
+const arrayForEachTwo = ['one', 'two', 'three', 'four', 'five'];
+arrayForEachTwo.forEach(item => console.log(`item: ${item}`));
