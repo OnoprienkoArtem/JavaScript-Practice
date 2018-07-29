@@ -79,3 +79,27 @@ console.log(newArrayMap); // ["#: 0 - one", "#: 1 - two", "#: 2 - three", "#: 3 
 const arrayMapWithIndex = ['one', 'two', 'three', 'four', 'five'];
 let createObject = arrayMapWithIndex.map(item => item);
 console.log(createObject); // ["one", "two", "three", "four", "five"]
+
+
+
+// filter() - создает новый массив с отфильтрованнымиб при помощи cakkback функции, значениями. 
+// так же как и map(), но в новый массив попадут только те значения, которые прошли проверку в callback функции.
+
+const arrayFilter = ['one', 1, 'two', 'three', 7, 'four', true, 'five'];
+let newArrayFilter = arrayFilter.filter(item => item == 'four');
+console.log(newArrayFilter); // ["four"]
+
+const arrayFilter_1 = ['one', 1, 'two', 'three', 7, 'four', true, 'five'];
+let newArrayFilter_1 = arrayFilter_1.filter(item => typeof item === 'string');
+console.log(newArrayFilter_1); // ["one", "two", "three", "four", "five"]
+
+const arrayFilter_2 = ['one', 1, 'two', 'three', 7, 'four', true, 'five'];
+let newArrayFilter_2 = arrayFilter_2.filter(item => typeof item === 'number');
+console.log(newArrayFilter_2); // [1, 7]
+
+const arrayFilter_3 = [12, 1, 5, 15, 7, 9, 6, 4];
+let newArrayFilter_3 = arrayFilter_3.filter(item => {
+    let newNumber = item * 5;
+    return newNumber > 50;
+});
+console.log(newArrayFilter_3); // [12, 15]
