@@ -60,6 +60,7 @@ arrayForEachTwo.forEach(item => console.log(`item: ${item}`));
 
 
 
+
 // map() - перебирает массив и возвращает новый, при помощи return.
 const number = [1, 2, 3, 4, 5];
 let doubleNumber = number.map(function(number) {
@@ -75,3 +76,6 @@ let newArrayMap = arrayMap.map((item, i) => {
 console.log(newArrayMap); // ["#: 0 - one", "#: 1 - two", "#: 2 - three", "#: 3 - four", "#: 4 - five"]
 
 
+const arrayMapWithIndex = ['one', 'two', 'three', 'four', 'five'];
+let createObject = arrayMapWithIndex.map(item => item);
+console.log(createObject); // ["one", "two", "three", "four", "five"]
