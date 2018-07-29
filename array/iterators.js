@@ -44,6 +44,7 @@ for (let i of arrayForOfCondition) {
 
 
 
+
 // forEach - этот метод перебирает все элементы массива и для каждого элемента вызывает callback функцию.
 
 // может принимать три аргумента (текущий элемент масива, индекс, массив)
@@ -54,7 +55,16 @@ const arrayForEach = ['one', 'two', 'three', 'four', 'five'];
 arrayForEach.forEach(function(item, index) {
     console.log(`index: ${index}`, `item: ${item}`);
 });
-
+//  index: 0 item: one
+//  index: 1 item: two
+//  index: 2 item: three
+//  index: 3 item: four
+//  index: 4 item: five
+//  item: one
+//  item: two
+//  item: three
+//  item: four
+//  item: five
 const arrayForEachTwo = ['one', 'two', 'three', 'four', 'five'];
 arrayForEachTwo.forEach(item => console.log(`item: ${item}`));
 
@@ -82,6 +92,7 @@ console.log(createObject); // ["one", "two", "three", "four", "five"]
 
 
 
+
 // filter() - создает новый массив с отфильтрованнымиб при помощи cakkback функции, значениями. 
 // так же как и map(), но в новый массив попадут только те значения, которые прошли проверку в callback функции.
 
@@ -106,7 +117,9 @@ console.log(newArrayFilter_3); // [12, 15]
 
 
 
+
 // EVERY и SOME (возвращают true или false);
+
 // some() - вернет true если хотя бы один из элементов массива, при выполнении callback функции, вернет true.
 let arrayNumber = [12, 1, 5, 15, 7, 9, 6, 4];
 let newArraySome = arrayNumber.some(item => {
@@ -114,8 +127,23 @@ let newArraySome = arrayNumber.some(item => {
 });
 console.log(newArraySome); // true
 
+
 // every() - вернет true если все элементы массива, при выполнении callback функции, вернут true.
 let newArrayEvery = arrayNumber.every(item => {
     return item > 10;
 });
 console.log(newArrayEvery); // false
+
+
+
+
+// reduce() - обрабатывает при помощи callback функции, каждый елемент масива, но результат каждой итерации 
+// записывает в промежуточное значение.
+// callback функция принимает несколько аргументов (промежуточное значение, элемент массива, индекс, массив)
+const arrayReduce = [1, 2, 3, 4, 5];
+let sum = arrayReduce.reduce(function(result, element) {
+    return result + element;
+}, 0);
+console.log(sum); // 15
+
+// reduceRight() - аналогично но только с конца массива
