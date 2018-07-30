@@ -51,6 +51,33 @@ console.log(el);
 
 
 
+//НАВИГАЦИЯ по DOM дереву
+
+// parentNode - получить доступ к родительскому элементу.
+// childNodes - получить все дочерние элементы в виде коллекции.
+// firstChild - получить первый дочерний элемент.
+// lastChild - получить последний дочерний элемент.
+// previousSibling - получить соседний элемент слева (выше по дереву).
+// nextSibling - получить соседний элемент справа (ниже по дереву).
+
+
+let elDom = document.getElementById('elementId');
+console.log(elDom.childNodes);
+console.log(elDom.parentNode);
+
+
+// навигация по нодам с типом element 
+
+// parentElement - получить доступ к родительскому элементу.
+// children - получить все дочерние элементы в виде коллекции.
+// firstElementChild - получить первый дочерний элемент.
+// lastElementChild - получить последний дочерний элемент.
+// previousElementSibling - получить соседний элемент слева (выше по дереву).
+// nextElementSibling - получить соседний элемент справа (ниже по дереву).
+
+let elDomEl = document.getElementById('elementId');
+console.log(elDomEl.children);
+console.log(elDomEl.parentElement);
 
 
 
