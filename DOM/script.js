@@ -84,8 +84,62 @@ console.log(elDomEl.parentElement);
 
 
 
+// DOM свойства и методы
+
+// методы для работы с атрибутами:
+// element.hasAttribute() - выполняет проверку на наличие атрибута(возвращает true или false).
+// element.getAttribute() - получение значения арибута.
+// element.serAttribute() - установка значения атрибута.
+// element.removeAttribute() - удаление атрибута.
+
+const element_1 = document.getElementById('main');
+let hasAttr = element_1.hasAttribute('style');
+console.log(hasAttr); // true
+
+element_1.style.height = '200px';
+element_1.setAttribute('class', 'main_1 main_2');
 
 
+if (hasAttr) {
+    let button = document.querySelector('button');
+    button.setAttribute('id', 'btn');
+    // button.id = 'btn';
+    let attrValue = button.getAttribute('id');
+    // button.id
+    console.log(attrValue);
+}
+
+// element_1.removeAttribute('style');
+// hasAttr = element_1.hasAttribute('style');
+// console.log(hasAttr); //false
+
+
+// style
+// .style.cssText - получить все стили в виде строки.
+// getComputedStyle(); - получить все свойства стилей.
+let elementS = document.querySelector('button');
+let marginTopElem = getComputedStyle(elementS).marginTop;
+
+
+// работа с классами
+// className - получает список классов (в виде строки). 
+console.log(element_1.className);
+
+// classList - возвращает псевдомасси DOMTokenList состоящий из классов, которые присвоены элементу.
+// это псевдомассив имеет несколько специальных методов:
+// element.classList.add() - добавление нового класса к элементу;
+// element.classList.toggle() - если указанный класс присутствует, то будет удален, если нет то добавлен.
+// element.classList.contains() - проверяет если такой класс (возвращает true или false).
+// element.classList.remove() - удаляет указанный класс.
+
+
+console.log(element_1.classList);
+
+element_1.classList.add('new-class', 'new-class-2');
+console.log(element_1.className);
+
+element_1.classList.remove('new-class-2');
+console.log(element_1.className);
 
 
 
