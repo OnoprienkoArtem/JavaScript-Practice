@@ -198,4 +198,43 @@ for (let index = 0; index < element_1.childNodes.length; index++) {
 
 
 
+// СОЗДАНИЕ И ВСТАВКА DOM элементов 
+
+// document.createElement() - создает ноду типа element.
+// document.createTextNode() - создает ноду типа text.
+
+// element.appendChild() - добавляет элемент как дочерний в родительский. (если есть то добавляет последним).
+// element.insertBefore() - вставляет дочерний элемент перед указанным.
+
+const elemBtn = document.getElementById('main');
+
+const btn = document.createElement('button');
+const btnText = document.createTextNode('My button');
+btn.id = 'button-1';
+btn.disabled = 'disabled';
+btn.appendChild(btnText);
+elemBtn.appendChild(btn);
+
+const newDiv = document.createElement('div');
+newDiv.innerHTML = 'some text before';
+const randomBtn = document.getElementById('button-1');
+
+elemBtn.insertBefore(newDiv, randomBtn); // или   elemBtn.appendChild(newDiv);
+
+
+
+// element.textContent - свойство, которое помогает получить или установить текстовое значение.(не преобразовывается в теги)
+
+
+
+// element.cloneNode() - метод для клонирования ноды.
+
+const cloneBtnFull = elemBtn.cloneNode(true); // глубокая копия со всеми внутренними
+cloneBtnFull.id = 'button-full';
+console.log(cloneBtnFull);
+
+const cloneBtn = elemBtn.cloneNode(false); // не глубокая копия
+cloneBtn.id = 'button-2';
+console.log(cloneBtn);
+
 
