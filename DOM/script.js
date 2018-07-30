@@ -238,3 +238,21 @@ cloneBtn.id = 'button-2';
 console.log(cloneBtn);
 
 
+
+
+// element.removeChild() - удаляет дочерний элемент из родительского. (возвращают удаленные елементы)
+// element.remove() - удаляет непосредственно тот элемент, на котором вызван метод.
+// element.replaceChild() - вставляет новый элемент вместо старого. (возвращают удаленные елементы)
+
+const elemMain = document.getElementById('main');
+const mainBtn = document.querySelector('button');
+elemMain.removeChild(mainBtn);
+
+
+const elementR = document.getElementById('elementId');
+elementR.remove();
+
+
+const newDiv1 = document.createElement('div');
+const description = document.getElementById('description');
+elemMain.replaceChild(newDiv1, description);
