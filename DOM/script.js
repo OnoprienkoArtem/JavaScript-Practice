@@ -143,13 +143,56 @@ console.log(element_1.className);
 
 
 
+// работа с HTML содержимым
+
+// innerHTML - получает или устанавливает разметку дочерних элементов относительно элемента, на котором было применено свойство.
+console.log(element_1.innerHTML); // <button type="button" id="btn">BUTTOn</button>
+
+let divElement = document.getElementById('innerId');
+divElement.innerHTML = '<span>Inner span</span>';
+
+
+// outerHTML - получает или устанавливает разметку элемента, на котором было применено свойство, включая его дочерние елементы.
+// !!!!!!!!!  лучше избегать  !!!!!!!!!!!!!!!!
+console.log(element_1.outerHTML);
+// <div id="main" style="background-color: rgb(51, 51, 51); height: 200px;" class="main_1 main_2 new-class">
+//     <button type="button" id="btn">BUTTOn</button>
+// </div>
+
+
+
+
+// идентификация нод 
+// tagName - определяет имя HTML тега (только для нод типа element)
+// nodeName - определяет имя ноды.
+
+for (let index = 0; index < element_1.childNodes.length; index++) {
+    console.log(element_1.childNodes[index].nodeName);
+}
+// #text   - из-за переноса строки
+// BUTTON
+// #text   - из-за переноса строки
+
+for (let index = 0; index < element_1.childNodes.length; index++) {
+    console.log(element_1.childNodes[index].tagName);
+}
+// undefined
+// BUTTON
+// undefined
 
 
 
 
 
+// размеры и позиционирование элементов
 
+// element.clientHeight - высота элемента в пикселях, включая (padding и margin), но не (border).
+// element.clientWidth - ширина элемента в пикселях, включая (padding и margin), но не (border).
+// element.offsetHeight - высота элемента в пикселях, включая (padding и border), но не (margin).
+// element.offsetWidth - ширина элемента в пикселях, включая (padding и border), но не (margin).
 
+// element.offsetTop - позиция элемента в пикселях, от верхней части, относительно ближнего родительского элемента.
+// element.offsetLeft - позиция элемента в пикселях, от левой части, относительно ближнего родительского элемента.
 
 
 
