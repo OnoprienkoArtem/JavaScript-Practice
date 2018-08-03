@@ -81,6 +81,8 @@ console.log(expireDate);
 
 
 
+
+
 // Web storage - место для локального хранения данных в браузере. (не передаются на сервер)
 
 // localStorage - позволяет хранить данные локально без ограничений по времени и могут быть удалены только с помощью JS.
@@ -99,3 +101,32 @@ localStorage.removeItem('lv');
 localStorage.clear();
 
 
+
+
+
+// Timing (setTimeout and setInterval)
+
+// serTimeout() - позволяет вызвать переданную в метод функцию через определенный отрезок времени.
+
+// setInterval() - позволяет вызвать функцию повторно с указанным временным интервалом.
+
+setTimeout(function() {
+    console.log('Time is out!');
+}, 3000);
+
+setTimeoutT(() =>  console.log('Time is out!'), 3000);
+
+setTimeout(setTimeFunction, 3000);
+
+const setTimeFunction = function() {
+    console.log('Time is out!');
+}
+
+
+setInterval(function () {
+    console.log('interval!');
+}, 500);
+
+
+clearTimeout(setTimeoutT);
+clearInterval(setInterval);
