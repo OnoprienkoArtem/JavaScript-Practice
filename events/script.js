@@ -216,7 +216,7 @@ three.addEventListener('click', msg);
 // event.stopPropagation() - прекращает всплытие или захвата события.
 // event.stopImmediatePropagation() - кроме прекращения всплытия или захвата события, препятствует выполнению,
 // всех событий на текущем элементе.
-// event.preventDefault() - предотвращает стандартное поведение браузера.
+// event.preventDefault() - предотвращает стандартное поведение браузера. (самая популярная)
 
 
 
@@ -257,6 +257,31 @@ three.addEventListener('click', btnHandle);
 
 // current target: three'
 
+
+
+
+// делигирование событий - подход, который используется при необходимости установить на нескольких элементах
+// одинаковые обработчики события.
+// Вместо того, чтобы назначить функцию-обработчик отдельно на каждом элементе, ставится один обработчик
+// на их общего родителя.
+
+// <div id='wrapper'>
+//     <div id='one'>First div
+//          <div id='two'>Second div
+//              <div id='three'></div>Third div
+//          </div>
+//      </div>
+// </div>
+
+const wrapper = document.querySelector('#wrapper');
+
+function handler(e) {
+    console.log(e.target);
+}
+
+wrapper.addEventListener('click', handler);
+
+// куда бы мы не нажали мы узнаем элемент на котором произошел клик.
 
 
 
