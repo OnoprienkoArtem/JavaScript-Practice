@@ -285,3 +285,46 @@ wrapper.addEventListener('click', handler);
 
 
 
+
+// CUSTOMEVENT  ---  конструктор CustomEvent
+//  принимает два параметра:
+// 1. имя нового события
+// 2. три свойства:
+//// bubbles: true or false, что указывает, может ли событие всплывать.
+//// cancelable: true or false, указывает, можно ли событие отменить с помощью метода stopPropagation.
+//// detail: значением является вложенный объект, с помощью которого можно предоставить информацию, которая 
+//// будет передана вместе с событием.
+
+// для инициализации события, соществует специальный метод dispatchEvent().
+
+
+// <input type='text' id='message'>
+// <br>
+// <textarea id='output'></textarea>
+
+const input = document.getElementById('message');
+const output = document.getElementById('output');
+
+function keyPressHandler(event) {
+    let value = event.currentTarget.value;
+    // создание события
+    const customEvent = new CustomEvent('listener', {
+        detail: {
+            message: value
+        },
+        bubbles: true,
+        cancelable: true
+    });
+    // инициализация события
+    event.currentTarget.dispatchEvent(customEvent);
+}
+
+function messageHandler(event) {
+    output.textContent = event.datail.message;
+}
+
+input.addEventListener('keyup', keyPressHandler);
+document.addEventListener('listener', messageHandler);
+
+
+
