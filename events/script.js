@@ -233,9 +233,10 @@ const three = document.querySelector('#three');
 let msg = function (event) {   
     console.log('current target: ' + event.currentTarget.id); // на каком элементе установлен обработчик
     event.stopPropagation();
+    // event.stopImmediatePropagation()
 }
 
-let btnHandle = function (event) {
+let btnHandle = function () {
     console.log('other click'); // на каком элементе установлен обработчик
 }
 
@@ -246,5 +247,16 @@ three.addEventListener('click', msg);
 three.addEventListener('click', btnHandle);
 
 // при клике на элементе с id three (всплытие не происходит), событие отработает только на том элементе на котором кликнули:
+
 // current target: three'
 // other click
+
+
+// если использовать event.stopImmediatePropagation() и кликнуть на на элементе с id three то сработает только один
+// основной обработчик (msg), и вывидет:
+
+// current target: three'
+
+
+
+
