@@ -194,8 +194,57 @@ one.addEventListener('click', msg);
 two.addEventListener('click', msg);
 three.addEventListener('click', msg);
 
+// при клике на элементе с id three (за счет всплытия мы видим и другие елементы):
+// current target: three'
+// current target: two'
+// current target: one'
+
 
 
 // объект EVENT
 
-// --------------- 25-00
+// объект event - содержит в себе информацию про событие, которое произошло.
+
+// основные свойства:
+// event.target - целевой елемент на котором событие было проинициализировано.
+// event.currentTarget - элемент на котором в данный момент отработало событие и вызвался обработчик.
+// event.type - тип события.
+// event.clientX и event.clientY - координаты курсоров, относительно окна, в момент срабатывания события.
+
+
+// основные методы объекта event:
+// event.stopPropagation() - прекращает всплытие или захвата события.
+// event.stopImmediatePropagation() - кроме прекращения всплытия или захвата события, препятствует выполнению,
+// всех событий на текущем элементе.
+// event.preventDefault() - предотвращает стандартное поведение браузера.
+
+
+
+// <div id='one'>First div
+//     <div id='two'>Second div
+//         <div id='three'></div>Third div
+//     </div>
+// </div>
+
+const one = document.querySelector('#one');
+const two = document.querySelector('#two');
+const three = document.querySelector('#three');
+
+let msg = function (event) {   
+    console.log('current target: ' + event.currentTarget.id); // на каком элементе установлен обработчик
+    event.stopPropagation();
+}
+
+let btnHandle = function (event) {
+    console.log('other click'); // на каком элементе установлен обработчик
+}
+
+one.addEventListener('click', msg);
+two.addEventListener('click', msg);
+three.addEventListener('click', msg);
+
+three.addEventListener('click', btnHandle);
+
+// при клике на элементе с id three (всплытие не происходит), событие отработает только на том элементе на котором кликнули:
+// current target: three'
+// other click
