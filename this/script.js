@@ -76,7 +76,7 @@ user.getFullName();
 
 
 
-// this в стрелочных функциях
+// this в стрелочных функциях (своего this стрелочные функции не имеют)
 // в стрелочных функциях нет проблемы потери контекста как вложенной функции, т.к. this стрелочной функции заимствует this
 // из внешней функции, в которой она определена.
 
@@ -101,4 +101,18 @@ user.getFullName();
 
 
 
+// this в событиях - равен элементу на котором он сработал.
+
+// <div>Div</div>
+const div = document.querySelector('div');
+
+function handler(e) {
+    console.log(this);
+}
+
+div.addEventListener('ckick', handler); //  <div>Div</div>
+// через this получаем тот же елемент, что и с помощью event.currentTarget
+// при делегировании события, this равен event.currentTarget
+
+// если в callback функцию разместить внутреннюю функцию то в ней this будет window. (нужно использовать стрелочную функцию)
 
