@@ -73,3 +73,32 @@ let user3 = {
 user.getFullName(); 
 // true
 // false
+
+
+
+// this в стрелочных функциях
+// в стрелочных функциях нет проблемы потери контекста как вложенной функции, т.к. this стрелочной функции заимствует this
+// из внешней функции, в которой она определена.
+
+let user4 = {
+    getFullName: function () {
+        console.log(this === user);
+
+        const innerFunction = () => {
+            console.log(this === user);  
+        }
+        innerFunction();
+    }
+}
+
+user.getFullName();
+// true
+// true
+
+// при вызове стрелочной функции в глобальной области видимости, у нее, как и у обычной функции, this раывен либо window, 
+// либо undefimed.
+
+
+
+
+
