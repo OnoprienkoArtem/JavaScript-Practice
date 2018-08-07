@@ -52,3 +52,24 @@ user2.getFullName = fullName;
 
 user1.getFullName();
 user2.getFullName();
+
+
+
+
+// ПОТЕРЯ КОНТЕКСТА - неявное изменение значения this.
+
+
+let user3 = {
+    getFullName: function() {
+        console.log(this === user);
+
+        function innerFunction() {
+            console.log(this === user);  // this === window (потеря контекста)
+        }
+        innerFunction();
+    }
+}
+
+user.getFullName(); 
+// true
+// false
