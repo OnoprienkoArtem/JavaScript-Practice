@@ -27,3 +27,28 @@ let user = {
 }
 user.checkThis(); // true
 
+// при вызове метода, с использованием this внутри него, вместо самого this будет подставлятся имя объекта в контексте
+// которого вызывается метод. 
+
+
+// полезность this, полностью раскрывается при разборе тем по ООП.
+
+let user1 = {
+    first: 'Dave',
+    lastName: 'Dowson'
+}
+
+let user2 = {
+    first: 'Bob',
+    lastName: 'Gordon'
+}
+
+function fullName() {
+    console.log(`${this.firstName} ${this.lastName}`);
+}
+
+user1.getFullName = fullName;
+user2.getFullName = fullName;
+
+user1.getFullName();
+user2.getFullName();
