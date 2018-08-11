@@ -55,3 +55,61 @@ calculate.add();  //  120
 
 
 
+// calculator
+
+const calculateR = (function() {
+    let numbers = [];
+
+    function setNumbers(...num) {
+        num.forEach(n => numbers.push(n)); // заполняем массив значениями которые передали
+    };
+
+    function getNumbers() {
+        console.log(numbers.toString());
+    };
+
+    function calculation(operand) {
+        const start = numbers[0];
+        const newNumbers = numbers.slice(1);
+
+        let result = newNumbers.reduce((accumulator, number) => {
+            if(operand === '+') {
+                return accumulator + number;
+            } else if(operand === '*') {
+                return accumulator * number;
+            } else {
+                return null;
+            }
+        }, start);
+        return result;
+    }
+    function multiplyNumbers(numbers) {
+        let result = calculation('*');
+        console.log(result);
+    }
+    function addNumbers(numbers) {
+        let result = calculation('+');
+        console.log(result);
+    }
+
+    return {
+        setNumbers: setNumbers,
+        getNumbers: getNumbers,
+        multiply: multiplyNumbers,
+        add: addNumbers
+    }
+})();
+
+calculateR.setNumbers(31, 42, 5, 34, 8);
+calculateR.add(); // 120
+calculateR.getNumbers(); // 31,42,5,34,8
+
+
+
+// интерфейс - как пользователь взаимодествует с устройством или с програмой.
+// специальные методы мы можем вызывать вдругих частях программы
+
+// приватные методы не доступны за пределами модуля
+
+// как правило, переменные или константы внутри модуля не делают публичными, если небходимо получить 
+// или установить значение можно с помощью специальных методов (get and set)
