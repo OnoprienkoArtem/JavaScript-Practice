@@ -29,6 +29,29 @@
 
 
 
+// следующий способ создания Модуля - предоставление объектного интерфейса.
+// возвращаем (формируем) объет который будет обладать определенными методами, к которым мы можем обратиться через точку
+
+const calculate = (function() {
+    const numbers = [31, 42, 5, 34, 8];
+
+    return {
+        multiply: function() {
+            let result = numbers.reduce((accumulator, number) => {
+                return accumulator * number;
+            }, 1);
+            console.log(result);
+        },
+        add: function() {
+            let result = numbers.reduce((accumulator, number) => {
+                return accumulator + number;
+            }, 0);
+            console.log(result);
+        }
+    }
+})();
+
+calculate.add();  //  120
 
 
 
