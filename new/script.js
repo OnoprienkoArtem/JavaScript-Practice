@@ -33,3 +33,26 @@ const room2 = new Room('Bath', 10);
 
 room1.showInfo(); // Type of room: Bedroom, area: 15
 room2.showInfo(); // Type of room: Bath, area: 10
+
+
+// ---------------------------------
+
+function RoomSecond(name, area, number) {
+    const quantity = 3; // приватное свойство
+    this.area = area; // публичное свойство
+    this.name = name;
+    this.number = number;
+
+    showInfo = () => {  // приватный метод
+        return `Type of room: ${this.name}, area: ${this.area}`;
+    }
+
+    this.getFullDescriotion = () => {  // публичное свойство
+        const info = showInfo();
+        console.log(`${info}. It's ${this.number} of ${quantity} room.`);
+    }
+}
+
+const room3 = new RoomSecond('G', 15, '1st');
+room3.getFullDescriotion(); // Type of room: G, area: 15. It's 1st of 3 room.
+
