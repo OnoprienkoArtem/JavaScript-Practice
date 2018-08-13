@@ -56,3 +56,6 @@ function RoomSecond(name, area, number) {
 const room3 = new RoomSecond('G', 15, '1st');
 room3.getFullDescriotion(); // Type of room: G, area: 15. It's 1st of 3 room.
 
+// ------------
+
+//стрелочные функции не могут быть использованы как функции конструкторы.
