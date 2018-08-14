@@ -30,6 +30,24 @@ let user2 = {
 user2.getFullName(); //  Full name: undefined undefined  
 
 
+//---------------------------------
+
+
+function Room(type, area) {
+    this.area = area;
+    this.type = type;
+
+    function showInfo() {
+        console.log(`Type of room: ${this.type}, area: ${this.area}`);
+    }
+
+    this.getFullDescription = function() {
+        showInfo();
+    }
+}
+
+const room1 = new Room('Guest', 15);
+room1.getFullDescription(); // Type of room: undefined, area: undefined
 
 
 
