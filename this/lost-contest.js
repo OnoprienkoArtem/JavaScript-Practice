@@ -122,7 +122,20 @@ roomCall.getFullDescription(); // Type of room: Guest1, area: 151
 
 
 
+// -------------------------
 
+function say(greeting) {
+    console.log(`${greeting} ${this.firstName} ${this.lastName}`);
+}
+
+const person1 = { firstName: 'John', lastName: 'Jarvis'};
+const person2 = { firstName: 'Paul', lastName: 'Johnson'};
+
+say.call(person1, 'Hello'); // Hello John Jarvis
+say.call(person2, 'Hi!'); // Hi! Paul Johnson
+
+say.apply(person1, ['Hello']); // Hello John Jarvis
+say.apply(person2, ['Hi!']); // Hi! Paul Johnson
 
 
 
