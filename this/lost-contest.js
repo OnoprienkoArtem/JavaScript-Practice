@@ -138,10 +138,31 @@ say.apply(person1, ['Hello']); // Hello John Jarvis
 say.apply(person2, ['Hi!']); // Hi! Paul Johnson
 
 
+// -------------------------
+// bind() - не выполняет функцию, как только он был применен, он создает новыю функцию с привязанным контекстом,
+// которую можно позже вызвать.
+
+const sayHello1 = say.bind(person1, 'Hello'); 
+const sayHello2 = say.bind(person2, ['Hi!']); 
+
+sayHello1(); // Hello John Jarvis
+sayHello2(); // Hi! Paul Johnson
 
 
 
 
+// --------------------------------------------
+// --- использование стрелочной функции.
+let user2_3 = {
+    firstName: 'John2_3',
+    secondName: 'Hook2_3',
+    getFullName: function () {  
+        setTimeout(() => {
+            console.log(`Full name: ${this.firstName} ${this.secondName}`);
+        }, 2000);
+    }
+}
+user2_3.getFullName(); //  Full name: John2_3 Hook2_3
 
 
 
