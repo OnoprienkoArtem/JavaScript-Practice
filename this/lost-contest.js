@@ -91,7 +91,34 @@ room1_2.getFullDescription(); // Type of room: Guest, area: 15
 
 
 
+// --- использование специальных методов; call(), apply(), bind()
+// call() - вызывает функцию и позволяет передать в нее параметры один за другим через запятую;
+// apply() - вызывает функцию и позволяет передать в нее параметры в виде массива;
+// bind() - возвращает новую функцию, позволяет передать в нее параметры один за другим или в виде массива.
 
+// методы помогают присвоить нужный контекст исполнения для функции.
+
+
+// functionName.call(context, params);  // второй параметр не обязателен
+// functionName.call(context, param1, param2, param3);  // второй параметр не обязателен
+
+// functionName.apply(context, [param1, param2, param3]);  // второй параметр не обязателен
+
+function RoomCall(type, area) {   
+    this.area = area;
+    this.type = type;
+
+    function showInfo() {
+        console.log(`Type of room: ${this.type}, area: ${this.area}`);
+    }
+
+    this.getFullDescription = function () {
+        showInfo.call(this);
+    }
+}
+
+const roomCall = new RoomCall('Guest1', 151);
+roomCall.getFullDescription(); // Type of room: Guest1, area: 151
 
 
 
