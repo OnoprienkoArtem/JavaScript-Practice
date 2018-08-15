@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    
+
+    <style>
+        .wrapper {
+            width: 600px;
+            background: pink;
+        }
+        .content {
+            width: 500px;
+            margin: auto;
+        }
+        .slick-slide:not(.slick-center) {
+            z-index: 0;
+            transform: scale(0.7);
+        }
+        .slick-active.slick-center+.slick-slide+.slick-slide {
+            z-index: 1;
+        }
+        .slick-active.slick-center+.slick-slide,
+        .slick-center+.slick-cloned {
+            z-index: 2;
+        }
+        .slick-center {
+            z-index: 3;
+        }
+        .slick-slide {
+            position: relative;
+            transition: transform 80ms;
+        }
+        .slider__item img {
+            position: relative;
+            transform: translateX(-50%);
+            left: 50%;
+        }
+        .slick-prev {
+            left: 10% !important;
+        }
+        .slick-next {
+            right: 10% !important;
+        }
+    </style>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+</head>
+<body>
+    <div class="wrapper">
+        <div class="content">
+            <div class="slider">
+                <div class="slider__item">
+                    <img src="https://pp.userapi.com/c834100/v834100491/58296/G8F9vgI_pr4.jpg" />
+                </div>
+                <div class="slider__item">
+                    <img src="https://pp.userapi.com/c834100/v834100491/58296/G8F9vgI_pr4.jpg" />
+                </div>
+                <div class="slider__item">
+                    <img src="https://pp.userapi.com/c834100/v834100491/58296/G8F9vgI_pr4.jpg" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        $('.slider').slick({
+            arrows: true,
+            centerMode: true,
+            infinite: true,
+            centerPadding: '250px',
+            slidesToShow: 1,
+            speed: 500,
+            dots: false,
+        });
+    </script>    
+</body>
+</html>
