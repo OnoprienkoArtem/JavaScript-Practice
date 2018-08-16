@@ -89,7 +89,28 @@ businessRoom.printArea(); // Area: 12
 
 
 
+// ОЕАЛИЗАЦИЯ "КЛАССА" С ПОМОЩЬЮ ПРОТОТИПА
 
+// Как таковых классов в JavaScript нет, они реализуются с помощью функций - конструкторов и чаще называются 
+// просто прототипом или родительским объектом.
+
+
+function Print(doc) {
+    this.document = doc;
+
+    this.print = function() {
+        console.log(this.document);
+    }
+}
+
+const newPrinter = new Print('Text 1');
+const otherPrinter = new Print('Text 2');
+
+newPrinter.print(); // Text 1
+otherPrinter.print(); // Text 2
+
+
+// !!!!  =>   лучше метод print из функции конструктора Print вынести в прототип
 
 
 
