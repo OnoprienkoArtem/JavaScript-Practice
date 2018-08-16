@@ -113,5 +113,17 @@ otherPrinter.print(); // Text 2
 // !!!!  =>   лучше метод print из функции конструктора Print вынести в прототип
 
 
+function Printer(text) {
+    this.document = text;
+}
 
+Printer.prototype.print = function() {
+    console.log(`content this doc: ${this.document}`);
+}
+
+const newPrinter1 = new Printer('new text from printer 1');
+const newPrinter2 = new Printer('new text from printer 2');
+
+newPrinter1.print(); // content this doc: new text from printer 1
+newPrinter2.print(); // content this doc: new text from printer 2
 
