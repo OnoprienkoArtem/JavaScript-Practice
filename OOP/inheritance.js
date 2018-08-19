@@ -44,7 +44,22 @@ Machine.prototype = {
 }
 
 
+function TapeRecorder(product, model) {
+    Machine.apply(this, [product]); // для того чтобы использовать свойства родителя (или конкретное свойство или arguments)
+    this.model = model;
+}
 
+TapeRecorder.prototype = Object.create(Machine.prototype);
+// Метод Object.create() создает новый объект и устанавливает в его прототип то, что указано в качестве аргумента.
+
+const tapeRecorder = new TapeRecorder('Tape recorder', 'TH45');
+tapeRecorder.on(); // Tape recorder is ON!
+tapeRecorder.off(); // Tape recorder is OFF!
+
+TapeRecorder.prototype.pause = function() { // собственный метод
+    console.log(`${this.product} is PAUSE!`);
+}
+tapeRecorder.pause(); // Tape recorder is PAUSE!
 
 
 
