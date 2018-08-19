@@ -62,5 +62,27 @@ TapeRecorder.prototype.pause = function() { // собственный метод
 tapeRecorder.pause(); // Tape recorder is PAUSE!
 
 
+// если прописать метод с таким же именем в потомке он перезапишет родительский метод
+TapeRecorder.prototype.on = function () {
+    Machine.prototype.on.apply(this, arguments);  // для использоания функционала родителя 
+    console.log(`Model: ${this.model}`);
+}
+tapeRecorder.on(); // Tape recorder is ON! own method!!!
+
+// свойство constructor - ссылка на родителя (показывает какая функция конструктор зодала объект)
+// при наследовании свойство constructor перезаписывается
+TapeRecorder.prototype.constructor === Machine; // true
+TapeRecorder.prototype.constructor === TapeRecorder; // false
+
+// для сохранения корректного конструктора, необходимо его явно присвоить вручную.
+TapeRecorder.prototype.constructor = TapeRecorder;
+
+TapeRecorder.prototype.constructor === Machine; // false
+TapeRecorder.prototype.constructor === TapeRecorder; // true
+
+
+
+
+// ------------------------------
 
 
