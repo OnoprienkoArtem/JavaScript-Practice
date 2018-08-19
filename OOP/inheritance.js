@@ -86,3 +86,19 @@ TapeRecorder.prototype.constructor === TapeRecorder; // true
 // ------------------------------
 
 
+// для удобства с начала прописывают весь функционал родителя потом отдельно весь функционал потомка, 
+// потом создается специальная функция наследования:
+
+function inheritance(parent, child) {
+    let tempChild = child.prototype;
+    child.prototype = Object.create(parent.prototype);
+    child.prototype.constructor = child;
+
+    for (let key in tempChild) {
+        if (tempChild.hasOwnProperty(key)) {
+            child.prototype[key] = tempChild[key];            
+        }
+    }
+}
+
+inheritance(Machine, TapeRecorder);
