@@ -23,9 +23,29 @@ NewFunction();
 // Класс, от которого новый класс наследуется, называется: предком, базовым классом, суперклассом.
 
 
+function Machine(product) {
+    this.product = product;
+}
+
+// Machine.prototype.on = function() {
+//     console.log(`${this.product} is ON!`);
+// }
+// Machine.prototype.off = function () {
+//     console.log(`${this.product} is OFF!`);
+// }
+// или
+Machine.prototype = {
+    on: function() {
+        console.log(`${this.product} is ON!`);
+    },
+    off: function () {
+        console.log(`${this.product} is OFF!`);
+    }
+}
 
 
 
 
 
-// ------------  
+
+
