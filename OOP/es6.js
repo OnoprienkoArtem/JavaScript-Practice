@@ -61,4 +61,42 @@ bmw.wheels; // 10
 // гетеры и сетеры - свойства аксессоры (свойства доступа).
 
 
+// НАСЛЕДОВАНИЕ
+
+class Cars {
+    constructor(name = 'default') {
+        this.wheels = 4;
+        this.name = name;
+    }
+
+    drive() {
+        console.log(`Car ${this.name} is on road`);
+    }
+
+    stop() {
+        console.log(`Car ${this.name} is on stoped`);
+    }
+
+    get show() {
+        console.log(this.wheels);
+    }
+}
+
+class ElectroCar extends Cars {
+    constructor(name, year) {
+        super(name);
+        this.year = year;
+    }
+    drive() {
+        super.drive();
+        console.log(`Tesla ${this.name} is using battery to drive`);
+        console.log(`Year ${this.year}`);
+    }
+}
+
+const tesla = new ElectroCar('Model S', 2018);
+
+tesla.drive();
+tesla.stop();
+tesla.show;
 
