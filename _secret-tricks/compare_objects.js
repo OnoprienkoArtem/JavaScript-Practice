@@ -16,6 +16,8 @@ let person3 = {
     car: 'Kia' // match fields
 }
 
+
+// find match and replace
 function comparePerson(obj1, obj2) {
     let out = {}
     let keys1 = Object.keys(obj1)
@@ -35,3 +37,11 @@ function comparePerson(obj1, obj2) {
     }
     return out;
 }
+
+console.log(person1); // {name: "Tim", surname: "Smith", age: "25", car: "Toyota"}
+
+let object1 = comparePerson(person1, person2);
+console.log(object1); //{name: "John", surname: "Smith", age: "25", car: "Toyota"}
+
+let object2 = comparePerson(person1, person3);
+console.log(object2); //{name: "Art", surname: "Smith", age: "35", car: "Kia"}
