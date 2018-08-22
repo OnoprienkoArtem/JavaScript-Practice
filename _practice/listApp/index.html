@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>Список пользователей (прототипное наследование)</title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+        <h5 class="my-0 mr-md-auto font-weight-normal">ListApp</h5>
+        <nav class="my-2 my-md-0 mr-md-3">
+            <a class="p-2 text-dark" href="#">Главная</a>
+            <a class="p-2 text-dark" href="#">Галлерея</a>
+            <a class="p-2 text-dark" href="#">О компании</a>           
+        </nav>
+        <a class="btn btn-outline-primary" href="#">Войти</a>
+    </div>
+
+    <main role="main">
+        <section class="jumbotron text-center">
+            <div class="container">
+                <h1 class="jumbotron-heading">Список пользователей</h1>
+                <p class="lead text-muted">На этой странице вы можете увидеть всех пользователей системы, их контактные данные и уровень доступа. </p>
+            </div>
+        </section>
+
+        <div class="container">
+
+            <div id="details-view" class="row hide">
+                <div class="col-md-12 order-md-1">
+                    <h4 class="mb-3">Информация о пользователе</h4>
+                    <div id="details-items"></div>
+                    <hr class="mb-4">
+                    <button class="btn btn-primary btn-lg btn-block" id="back-btn">Ok, вернуться назад</button>
+                    <div class="py-5"></div>
+                </div>
+            </div>
+
+            <div id="main-view" class="row">
+                <div class="col-md-3">
+                    <div class="btn-group" id="dropdown-email">
+                        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Сортировать по email
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" sorting-type="A" href="#">Прямой порядок: A-Z</a>
+                            <a class="dropdown-item" sorting-type="Z" href="#">Обратный порядок: Z-A</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="btn-group" id="dropdown-role">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Фильтровать по роли
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" sorting-type="Admin" href="#">Выбрать роль: Admin</a>
+                            <a class="dropdown-item" sorting-type="User" href="#">Выбрать роль: User</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label for="inputSearch" class="col-sm-2 col-form-label">Поиск</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputSearch" placeholder="Что вы хотите найти?">
+                        </div>
+                    </div>
+                </div>
+
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">
+                                <input type="checkbox" id="select-all">
+                            </th>
+                            <th scope="col">#</th>
+                            <th scope="col">Имя</th>
+                            <th scope="col">Логин</th>
+                            <th scope="col">Роль</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Адрес</th>
+                            <th scope="col">Сайт</th>
+                            <th scope="col">Детальнее</th>
+                        </tr>
+                    </thead>
+                    <tbody id="user-list">
+                    </tbody>
+                </table>
+
+                <div class="col-md-12 py-5">
+                    <div class="text-center">
+                        <a href="#" id="next-page" class="btn btn-primary my-2">Следующая страница</a>
+                    </div>
+                    <div class="text-center" id="stats"></div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+    <script src="https://getbootstrap.com/assets/js/vendor/popper.min.js"></script>
+    <script src="https://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+    <script src=js/data.js></script>
+    <script src=js/service.js></script>
+    <script src=js/config.js></script>
+    <script src=js/main.3.js></script>
+</body>
+
+</html>
