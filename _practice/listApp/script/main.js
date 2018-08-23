@@ -15,6 +15,10 @@
         currentPage: 0
     }
 
+    function prepareUsersListData() {
+        usersListData = listService.duplicateArray(users, 1);
+    }
+
     function initListeners (){
 		selectAll.addEventListener("click", selectAllItems);
 		userList.addEventListener("click", selectTableLine);
@@ -24,5 +28,14 @@
 		roleDropdown.addEventListener("click", sortingHandler);
 		nextBtn.addEventListener("click", getNextPageHandler);
 	}
+
+    function selectAllItems() {
+        let checkboxes = userList.querySelectorAll("input[type=checkbox]");
+        // checkboxes.forEach(function(item){
+        // 	selectAll.checked ? item.checked = true: item.checked = true;
+        // });
+        checkboxes.forEach(item => selectAll.checked ? item.checked = true : item.checked = false);
+    }
+
 
 });
