@@ -37,5 +37,28 @@
         checkboxes.forEach(item => selectAll.checked ? item.checked = true : item.checked = false);
     }
 
+    function selectTableLine(event) {
+        //let tableLines = userList.querySelectorAll("tr");
+        let tableLines = event.currentTarget.querySelectorAll("tr");
+        tableLines.forEach(item => item.classList.remove("table-active"));
+        event.target.closest("tr").classList.add("table-active");
+    }
+
+    function searchHandler(event) {
+        event.preventDefault();
+        let value = event.target.value;
+        if (event.keyCode === 13 && (value.length == 0 || value.length > 2)) {
+            pageConfig.currentPage = 0;
+            userList.innerHTML = "";
+            let filterFunction = (page) => {
+                let exp = new RegExp(event.target.value, "i")
+                return page.filter(item => {
+                    return exp.test(item.name);
+                })
+            }
+            buildUsersList(filterFunction);
+        }
+    }
+
 
 });
