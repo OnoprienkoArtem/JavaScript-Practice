@@ -19,3 +19,52 @@ let r3 = /^t.t$/gi; // первый символ t, далее идет один
 let r4 = /\d{2-3}/i; // числовой символ может встреаться от 2 до 3 раз
 let r5 = /[0-9]/; // любое число которой попадает в диапазон от 0 до 9 
 let r6 = /\d+/ig; //
+
+
+// способы создания регулярного выражения
+
+// - используя литерал регулярного выражения /exp/;
+// - вызывают функцию конструктор RegExp;
+
+
+let str = 'Time to start';
+let exp = /^s.{3}t$/i;
+console.log(exp.test(str));  // false - так как наша строка не начинается с указанного первого символа s.
+
+let str1 = 'Time to start';
+let exp1 = /s.{3}t$/i; // убрали ^
+console.log(exp1.test(str1)); // true
+
+// test() - возвращает false/true
+
+
+let exp41 = new RegExp('start', 'i');
+// этот подход часто используется если шаблон заранее не известен. 
+// То есть может каким то образом вычислятся либо передаваться как параметр.
+function findText(pattern) {
+    let str = 'Time to start';
+    let exp = new RegExp(pattern, 'i');
+    return exp.test(str);
+}
+findText('^s.{3}t$');
+findText('Time');
+
+
+// методы для работы с регулярными выражениями:
+// три метода из объекты STRING
+// два метода из объекта REGEXP
+
+// STRING
+
+// str.search(reg); - возвращает позицию искомого элемента в строке или -1 если ничего не найдено.
+// способен искать только первое совпадение.
+// узнает где именно в тексте встречается искомая фраза.
+let str62 = 'Time to start';
+let exp63 = /to/g;
+let exp64 = /r/g;
+console.log(str62.search(exp63)); // 5
+console.log(str62.search(exp64)); // 11
+
+
+// str.match(reg);
+// str.replace(reg, replacement);
