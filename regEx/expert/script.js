@@ -191,3 +191,27 @@ while ((find = exp131.exec(str130)) !== null) {
 
 // если в тексте нужно найти спец символ его обязательно нужно экранировать \  ->   \^
 
+
+
+
+let strings = [
+    'http://domenName.net/',
+    'https://domenName.net/',
+    'this is not a URL',
+    'https://google.com/',
+    '123461',
+    'https://domenName.net/?s=google',
+    'http://js name net',
+    ' http://domenName.net.url/'
+];
+
+let regex = /^http\w?:\/\/[\w\/?.&-=]+$/;
+let result = [];
+
+for (let i = 0; i < strings.length; i++) {
+    if (regex.test(strings[i])) {
+        result.push(strings[i]);
+    }
+}
+
+console.log(result); // (4) ["http://domenName.net/", "https://domenName.net/", "https://google.com/", "https://domenName.net/?s=google"]
