@@ -59,13 +59,46 @@
             buildUsersList(filterFunction);
         }
     }
-    
+
     function sortingHandler(event) {
 		event.preventDefault();
 		event.currentTarget.querySelector("button").innerHTML = event.target.innerText;
 		let sortingType = event.target.getAttribute("sorting-type");
 		sortingType && applySortingMethod(sortingType);
 
+	}
+
+    function applySortingMethod(sortingType) {
+		pageConfig.currentPage = 0;
+		userList.innerHTML = "";
+
+		if (sortingType=="A") {
+			let sortingFunction = (page) => {
+				page.sort(listService.sortEmailAsc); 
+				return page;
+			}
+			buildUsersList(sortingFunction);
+
+		}
+		if (sortingType=="Z") {
+			let sortingFunction = (page) => {
+				page.sort(listService.sortEmailDesc); 
+				return page;
+			}
+			buildUsersList(sortingFunction);		
+		}
+		if (sortingType=="Admin") {
+			let filterFunction = (page) => {
+				return page.filter(listService.filterAdminRole)
+			}
+			buildUsersList(filterFunction)	
+		}
+		if (sortingType=="User") {
+			let filterFunction = (page) => {
+				return page.filter(listService.filterUserRole)
+			}
+			buildUsersList(filterFunction);			
+		}
 	}
 
 
