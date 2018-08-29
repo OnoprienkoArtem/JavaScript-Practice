@@ -59,6 +59,14 @@
             buildUsersList(filterFunction);
         }
     }
+    
+    function sortingHandler(event) {
+		event.preventDefault();
+		event.currentTarget.querySelector("button").innerHTML = event.target.innerText;
+		let sortingType = event.target.getAttribute("sorting-type");
+		sortingType && applySortingMethod(sortingType);
+
+	}
 
 
 });
