@@ -101,5 +101,14 @@
 		}
 	}
 
+    function getNextPageHandler(event) {
+		event && event.preventDefault();
+		buildUsersList();
+		if (isMaxPage()){
+			blockNextPage();	
+			countStats();
+		} 
+	}
+
 
 });
