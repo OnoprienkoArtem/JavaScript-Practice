@@ -110,5 +110,9 @@
 		} 
 	}
 
+	function isMaxPage() {
+		return (pageConfig.currentPage * pageConfig.itemsPerPage) >= usersListData.length;
+	}
+
 
 });
