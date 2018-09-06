@@ -118,5 +118,13 @@
 		nextBtn.classList.add("disabled");
 	}
 
+	function countStats() {
+		let stats = usersListData.reduce(function (sum, item) {
+			(item.role == "Admin") ? sum.admins++ : sum.users++;
+			return sum;
+		}, { admins: 0, users: 0 });
+		statsInfo.innerHTML = `Статистика системы. Админов: ${stats.admins}, Пользователей: ${stats.users}`;
+	}
+
 
 });
