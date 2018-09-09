@@ -141,5 +141,12 @@
 		listService.initTooltip();
 	}
 
+	function init() {
+		initListeners()
+		prepareUsersListData()
+		buildUsersList();
+	}
+	init();
+
 
 });
