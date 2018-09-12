@@ -8,6 +8,12 @@ var listService = (function () {
         return res;
     }
 
+    function hideElements(elementArray) {
+        elementArray.forEach(function (element) {
+            element.classList.add("hide");
+        })
+    }
+
  
 
     return {
