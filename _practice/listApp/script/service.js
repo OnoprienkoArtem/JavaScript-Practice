@@ -14,6 +14,12 @@ var listService = (function () {
         })
     }
 
+    function showElements(elementArray) {
+        elementArray.forEach(function (element) {
+            element.classList.remove("hide");
+        })
+    }
+
  
 
     return {
