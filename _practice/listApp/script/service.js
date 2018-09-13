@@ -17,7 +17,8 @@ var listService = (function () {
  
 
     return {
-        duplicateArray: duplicateArray,
+        duplicateArray: duplicateArray, 
+        hideElements: hideElements,
    
     }
 }());
