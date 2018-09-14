@@ -20,6 +20,10 @@ var listService = (function () {
         })
     }
 
+    function sortEmailAsc(a, b) {
+        return a.email > b.email ? 1 : -1;
+    }
+
  
 
     return {
