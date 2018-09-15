@@ -34,7 +34,8 @@ var listService = (function () {
         duplicateArray: duplicateArray, 
         hideElements: hideElements,
         showElements: showElements,
-   
+        sortEmailDesc: sortEmailDesc,
+        sortEmailAsc: sortEmailAsc,
     }
 }());
 
