@@ -24,6 +24,10 @@ var listService = (function () {
         return a.email > b.email ? 1 : -1;
     }
 
+    function sortEmailDesc(a, b) {
+        return a.email < b.email ? 1 : -1;;
+    }
+
  
 
     return {
