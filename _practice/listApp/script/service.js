@@ -28,6 +28,10 @@ var listService = (function () {
         return a.email < b.email ? 1 : -1;;
     }
 
+    function filterAdminRole(item) {
+        return item.role == "Admin";
+    }
+
  
 
     return {
