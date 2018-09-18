@@ -32,6 +32,10 @@ var listService = (function () {
         return item.role == "Admin";
     }
 
+    function filterUserRole(item) {
+        return item.role == "User";
+    }
+
  
 
     return {
