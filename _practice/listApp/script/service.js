@@ -36,6 +36,10 @@ var listService = (function () {
         return item.role == "User";
     }
 
+    function initTooltip() {
+        $('[data-toggle="tooltip"]').tooltip();
+    }
+
  
 
     return {
