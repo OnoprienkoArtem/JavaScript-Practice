@@ -48,6 +48,8 @@ var listService = (function () {
         showElements: showElements,
         sortEmailDesc: sortEmailDesc,
         sortEmailAsc: sortEmailAsc,
+        filterUserRole: filterUserRole,
+        filterAdminRole: filterAdminRole,
     }
 }());
 
