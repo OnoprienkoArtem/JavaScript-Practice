@@ -59,6 +59,42 @@ var listService = (function () {
 	  </td>
 	  </tr>`;
     };
+
+    function detailsTemplate(item) {
+        return `<form class="needs-validation" novalidate="">
+		<div class="row">
+		  <div class="col-md-6 mb-3">
+			<label for="firstName">Имя</label>
+			<input type="text" class="form-control" value="${item.name}" readonly>
+		  </div>
+		  <div class="col-md-6 mb-3">
+			<label for="lastName">Роль</label>
+			<input type="text" class="form-control" value="${item.role}" readonly>
+		  </div>
+		</div>
+		<div class="mb-3">
+		  <label for="username">Логин</label>
+		  <div class="input-group">
+			<div class="input-group-prepend">
+			  <span class="input-group-text">@</span>
+			</div>
+			<input type="text" class="form-control" value="${item.username}" readonly>
+		  </div>
+		</div>
+		<div class="mb-3">
+		  <label for="email">Email <span class="text-muted">(Опционально)</span></label>
+		  <input type="email" class="form-control" value="${item.email}" readonly>
+		</div>
+		<div class="mb-3">
+		  <label for="address">Адрес</label>
+		  <input type="text" class="form-control" value="${item.address.zipcode}, ${item.address.city}, ${item.address.street}" readonly>
+		</div>
+		<div class="mb-3">
+		  <label for="address2">Сайт</label>
+		  <input type="text" class="form-control" value="${item.website}" readonly>
+		</div>
+	  </form>`;
+    };
  
 
     return {
