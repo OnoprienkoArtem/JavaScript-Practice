@@ -110,13 +110,15 @@ var listService = (function () {
  
 
     return {
-        duplicateArray: duplicateArray, 
-        hideElements: hideElements,
-        showElements: showElements,
-        sortEmailDesc: sortEmailDesc,
-        sortEmailAsc: sortEmailAsc,
-        filterUserRole: filterUserRole,
-        filterAdminRole: filterAdminRole,
+		duplicateArray: duplicateArray,
+		sortEmailAsc: sortEmailAsc,
+		sortEmailDesc: sortEmailDesc,
+		filterAdminRole: filterAdminRole,
+		filterUserRole: filterUserRole,
+		hideElements: hideElements,
+		showElements: showElements,
+		tableTemplate: tableTemplate,
+		detailsTemplate: detailsTemplate,
 		initTooltip: initTooltip,
 		inheritance: inheritance
     }
