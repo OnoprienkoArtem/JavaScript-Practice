@@ -117,6 +117,8 @@ var listService = (function () {
         sortEmailAsc: sortEmailAsc,
         filterUserRole: filterUserRole,
         filterAdminRole: filterAdminRole,
+		initTooltip: initTooltip,
+		inheritance: inheritance
     }
 }());
 
