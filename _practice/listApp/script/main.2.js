@@ -13,6 +13,11 @@ var itemsListComponent = (function () {
     const mainView = document.querySelector("#main-view");
     const detailsItems = document.querySelector("#details-items");
 
+	let usersListData = [];
+	let pageConfig = {
+		itemsPerPage : 10,
+		currentPage: 0
+	}
 
 
   
