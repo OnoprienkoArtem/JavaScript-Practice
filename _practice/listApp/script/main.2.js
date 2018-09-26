@@ -19,6 +19,8 @@ var itemsListComponent = (function () {
 		currentPage: 0
 	}
 
-
+    function prepareUsersListData() {
+        usersListData = listService.duplicateArray(users, 1);
+    }
   
 }())
