@@ -22,5 +22,17 @@ var itemsListComponent = (function () {
     function prepareUsersListData() {
         usersListData = listService.duplicateArray(users, 1);
     }
+
+    function initListeners() {
+        selectAll.addEventListener("click", selectAllItems);
+        userList.addEventListener("click", tableLineHandler);
+
+        search.addEventListener("keyup", searchHandler);
+        emailDropdown.addEventListener("click", sortingHandler);
+        roleDropdown.addEventListener("click", sortingHandler);
+
+        nextBtn.addEventListener("click", getNextPageHandler);
+        backBtn.addEventListener("click", openMain);
+    }
   
 }())
