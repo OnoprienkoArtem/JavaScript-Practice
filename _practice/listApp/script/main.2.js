@@ -34,5 +34,10 @@ var itemsListComponent = (function () {
         nextBtn.addEventListener("click", getNextPageHandler);
         backBtn.addEventListener("click", openMain);
     }
+
+    function selectAllItems() {
+        let checkboxes = userList.querySelectorAll("input[type=checkbox]");
+        checkboxes.forEach(item => selectAll.checked ? item.checked = true : item.checked = false);
+    }
   
 }())
