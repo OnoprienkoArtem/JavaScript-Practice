@@ -39,5 +39,10 @@ var itemsListComponent = (function () {
         let checkboxes = userList.querySelectorAll("input[type=checkbox]");
         checkboxes.forEach(item => selectAll.checked ? item.checked = true : item.checked = false);
     }
+
+    function tableLineHandler(event) {
+		let isButton = event.target.getAttribute("data-row-id");
+		isButton ? openDetail(isButton) : selectTableLine(event);
+	}
   
 }())
