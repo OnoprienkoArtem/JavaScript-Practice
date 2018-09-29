@@ -44,5 +44,14 @@ var itemsListComponent = (function () {
 		let isButton = event.target.getAttribute("data-row-id");
 		isButton ? openDetail(isButton) : selectTableLine(event);
 	}
+
+    function openDetail(rowId) {
+        listService.hideElements([mainView]);
+        listService.showElements([detailsView]);
+        let user = usersListData.filter(item => item.id == rowId);
+        detailsItems.innerHTML = listService.detailsTemplate(user[0]);
+    }
+
+    
   
 }())
