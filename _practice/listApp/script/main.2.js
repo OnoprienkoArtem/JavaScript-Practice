@@ -51,6 +51,11 @@ var itemsListComponent = (function () {
         let user = usersListData.filter(item => item.id == rowId);
         detailsItems.innerHTML = listService.detailsTemplate(user[0]);
     }
+    
+    function openMain() {
+        listService.hideElements([detailsView]);
+        listService.showElements([mainView]);
+    }
 
     
   
