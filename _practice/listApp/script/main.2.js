@@ -56,11 +56,21 @@ var itemsListComponent = (function () {
         listService.hideElements([detailsView]);
         listService.showElements([mainView]);
     }
-    
+
     function selectTableLine(event) {
         let tableLines = event.currentTarget.querySelectorAll("tr");
         tableLines.forEach(item => item.classList.remove("table-active"));
         event.target.closest("tr").classList.add("table-active");
+    }
+
+    function searchHandler(event) {
+        event.preventDefault();
+        let value = event.target.value;
+        if (event.keyCode === 13 && (value.length == 0 || value.length > 2)) {
+            pageConfig.currentPage = 0;
+            userList.innerHTML = "";
+            buildUsersList(config.sortingConfig["Find"]);
+        }
     }
 
     
