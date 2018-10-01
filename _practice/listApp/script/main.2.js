@@ -56,6 +56,12 @@ var itemsListComponent = (function () {
         listService.hideElements([detailsView]);
         listService.showElements([mainView]);
     }
+    
+    function selectTableLine(event) {
+        let tableLines = event.currentTarget.querySelectorAll("tr");
+        tableLines.forEach(item => item.classList.remove("table-active"));
+        event.target.closest("tr").classList.add("table-active");
+    }
 
     
   
