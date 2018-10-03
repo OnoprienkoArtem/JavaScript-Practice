@@ -80,6 +80,12 @@ var itemsListComponent = (function () {
         sortingType && applySortingMethod(sortingType);
     }
 
+    function applySortingMethod(sortingType) {
+        pageConfig.currentPage = 0;
+        userList.innerHTML = "";
+        buildUsersList(config.sortingConfig[sortingType]);
+    }
+
     
   
 }())
