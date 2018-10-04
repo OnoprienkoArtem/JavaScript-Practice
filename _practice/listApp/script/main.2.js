@@ -86,6 +86,15 @@ var itemsListComponent = (function () {
         buildUsersList(config.sortingConfig[sortingType]);
     }
 
+    function getNextPageHandler(event) {
+        event && event.preventDefault();
+        buildUsersList();
+        if (isMaxPage()) {
+            blockNextPage();
+            countStats();
+        }
+    }
+
     
   
 }())
