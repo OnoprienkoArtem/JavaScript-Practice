@@ -98,5 +98,9 @@ var itemsListComponent = (function () {
     function isMaxPage() {
         return (pageConfig.currentPage * pageConfig.itemsPerPage) >= usersListData.length;
     }
+
+    function blockNextPage() {
+        nextBtn.classList.add("disabled");
+    }
   
 }())
