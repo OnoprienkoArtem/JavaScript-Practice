@@ -111,6 +111,13 @@ var itemsListComponent = (function () {
         statsInfo.innerHTML = `Статистика системы. Админов: ${stats.admins}, Пользователей: ${stats.users}`;
     }
 
+    function getNextPage() {
+        let start = pageConfig.itemsPerPage * pageConfig.currentPage;
+        let end = pageConfig.itemsPerPage + start;
+        pageConfig.currentPage++;
+        return usersListData.slice(start, end);
+    }
+
     
   
 }())
