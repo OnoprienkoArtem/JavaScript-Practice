@@ -1,4 +1,4 @@
-let arr = [3, 5, 2, 7, 9, 1, 4, 6, 8, 10];
+let arr = [3, 5, 2, 7, 9, 1, 4, 6, 8, 10, 55];
 for (let i = 0; i < arr.length; i++) {    
     for (let j = 0; j < arr.length; j++){
         if (arr[i] < arr[j]) {
@@ -53,3 +53,19 @@ console.log(binarySearch(arr, 11));  // -1
 console.log('indexOf => ', arr.indexOf(5)); // 4
 console.log('indexOf => ', arr.indexOf(10)); // 9
 console.log('indexOf => ', arr.indexOf(11)); // -1
+
+
+
+// линейная сложность O(N);
+function findMax(arr) {
+    let max = -Infinity;
+
+    for(let i = 0; i < arr.length; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+    return max;
+}
+
+console.log(findMax(arr)); // 10
