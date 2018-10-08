@@ -28,3 +28,28 @@ console.log(bubbleSort(arr));
 
 
 
+
+function binarySearch(arr, search) {
+    let left = 0;
+    let right = arr.length - 1;
+
+    while(left < right) {
+        const mid = Math.floor((left + right) / 2);
+
+        if (arr[mid] >= search) {
+            right = mid;
+        } else {
+            left = mid + 1;
+        }
+    }
+    return arr[right] === search ? right : -1;
+}
+
+console.log(binarySearch(arr, 10));  // 9
+console.log(binarySearch(arr, 11));  // -1
+
+
+
+console.log('indexOf => ', arr.indexOf(5)); // 4
+console.log('indexOf => ', arr.indexOf(10)); // 9
+console.log('indexOf => ', arr.indexOf(11)); // -1
