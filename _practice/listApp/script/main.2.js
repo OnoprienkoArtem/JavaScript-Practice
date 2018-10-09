@@ -118,6 +118,14 @@ var itemsListComponent = (function () {
         return usersListData.slice(start, end);
     }
 
+    function buildUsersList(filterSortFunction) {
+		let page = getNextPage();
+		filterSortFunction && (page = filterSortFunction(page));
+		let result = page.map(item => listService.tableTemplate(item));
+		userList.innerHTML += result.join("");
+		listService.initTooltip();
+	}
+
     
   
 }())
