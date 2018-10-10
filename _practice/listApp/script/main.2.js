@@ -126,6 +126,12 @@ var itemsListComponent = (function () {
 		listService.initTooltip();
 	}
 
+    function initComponent() {
+        initListeners()
+        prepareUsersListData()
+        buildUsersList();
+    }
+
     
   
 }())
