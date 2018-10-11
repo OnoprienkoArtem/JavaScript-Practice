@@ -132,6 +132,10 @@ var itemsListComponent = (function () {
         buildUsersList();
     }
 
-    
+    return {
+        init: initComponent
+    }
   
 }())
+
+itemsListComponent.init();
