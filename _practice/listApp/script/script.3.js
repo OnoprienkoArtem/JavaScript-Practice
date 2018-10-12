@@ -18,3 +18,13 @@ var BasicList = function () {
         currentPage: 0
     }
 }
+
+
+
+BasicList.prototype = {
+
+	prepareUsersListData: function () {
+	    this.usersListData = listService.duplicateArray(users, 1);
+	},
+
+}
