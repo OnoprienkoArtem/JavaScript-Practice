@@ -26,5 +26,17 @@ BasicList.prototype = {
 	prepareUsersListData: function () {
 	    this.usersListData = listService.duplicateArray(users, 1);
 	},
+    
+    initListeners: function () {
+        this.selectAll.addEventListener("click", this.selectAllItems.bind(this));
+        this.userList.addEventListener("click", this.tableLineHandler.bind(this));
+
+        this.search.addEventListener("keyup", this.searchHandler.bind(this));
+        this.emailDropdown.addEventListener("click", this.sortingHandler.bind(this));
+        this.roleDropdown.addEventListener("click", this.sortingHandler.bind(this));
+
+        this.backBtn.addEventListener("click", this.openMain.bind(this));
+    },
+
 
 }
