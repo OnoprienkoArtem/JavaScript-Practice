@@ -10,7 +10,7 @@ function fibonacci(n) {
 console.log(fibonacci(5)); 
 console.log(fibonacci(10)); // 55
 
-//console.log(fibonacci(10));  будет выполнятся 50000 лет
+//console.log(fibonacci(100));  будет выполнятся 50000 лет
 
 
 
