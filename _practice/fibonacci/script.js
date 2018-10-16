@@ -1,5 +1,5 @@
 
-// рекурсивное решение
+// рекурсивное решение - очень медленный алгоритм
 function fibonacci(n) {
     if (n <= 1) {
         return n;
@@ -27,3 +27,14 @@ function fibEffective(n) {
 
 console.log(fibEffective(10)); // 55
 console.log(fibEffective(100)); // 54224848179262000000
+
+
+
+// мемоизация
+var n = 100;
+var arrMemo = Array(n + 1);
+for (var j = 0; j < arrMemo.length; j++) {
+    arrMemo[j] = -1;
+}
+
+
