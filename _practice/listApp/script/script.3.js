@@ -38,5 +38,10 @@ BasicList.prototype = {
         this.backBtn.addEventListener("click", this.openMain.bind(this));
     },
 
+    selectAllItems: function(){
+		let checkboxes = this.userList.querySelectorAll("input[type=checkbox]");
+		checkboxes.forEach(item => this.selectAll.checked ? item.checked = true : item.checked = false);
+	},
+
 
 }
