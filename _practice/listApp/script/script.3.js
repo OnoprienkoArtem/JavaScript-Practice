@@ -43,5 +43,10 @@ BasicList.prototype = {
 		checkboxes.forEach(item => this.selectAll.checked ? item.checked = true : item.checked = false);
 	},
 
+    tableLineHandler: function (event) {
+        let isButton = event.target.getAttribute("data-row-id");
+        isButton ? this.openDetail(isButton) : this.selectTableLine(event);
+    },
+
 
 }
