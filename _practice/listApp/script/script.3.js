@@ -48,5 +48,12 @@ BasicList.prototype = {
         isButton ? this.openDetail(isButton) : this.selectTableLine(event);
     },
 
+    openDetail: function (buttonId) {
+        listService.hideElements([this.mainView]);
+        listService.showElements([this.detailsView]);
+        let user = this.usersListData.filter(item => item.id == buttonId);
+        this.detailsItems.innerHTML = listService.detailsTemplate(user[0]);
+    },
+
 
 }
