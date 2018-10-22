@@ -55,5 +55,11 @@ BasicList.prototype = {
         this.detailsItems.innerHTML = listService.detailsTemplate(user[0]);
     },
 
+    openMain: function () {
+        listService.hideElements([this.detailsView]);
+        listService.showElements([this.mainView]);
+    },
+
+
 
 }
