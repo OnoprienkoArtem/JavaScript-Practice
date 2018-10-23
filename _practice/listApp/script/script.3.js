@@ -60,6 +60,12 @@ BasicList.prototype = {
         listService.showElements([this.mainView]);
     },
 
+    selectTableLine: function (event) {
+        let tableLines = event.currentTarget.querySelectorAll("tr");
+        this.tableLines.forEach(item => item.classList.remove("table-active"));
+        event.target.closest("tr").classList.add("table-active");
+    },
+
 
 
 }
