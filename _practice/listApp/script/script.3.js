@@ -66,6 +66,16 @@ BasicList.prototype = {
         event.target.closest("tr").classList.add("table-active");
     },
 
+    searchHandler: function (event) {
+        event.preventDefault();
+        let value = event.target.value;
+        if (event.keyCode === 13 && (value.length == 0 || value.length > 2)) {
+            this.pageConfig.currentPage = 0;
+            this.userList.innerHTML = "";
+            this.buildUsersList(config.sortingConfig["Find"]);
+        }
+    },
+
 
 
 }
