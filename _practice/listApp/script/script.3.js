@@ -76,6 +76,13 @@ BasicList.prototype = {
         }
     },
 
+    sortingHandler: function (event) {
+        event.preventDefault();
+        event.currentTarget.querySelector("button").innerHTML = event.target.innerText;
+        let sortingType = event.target.getAttribute("sorting-type");
+        sortingType && this.applySortingMethod(sortingType);
+    },
+
 
 
 }
