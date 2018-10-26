@@ -82,7 +82,12 @@ BasicList.prototype = {
         let sortingType = event.target.getAttribute("sorting-type");
         sortingType && this.applySortingMethod(sortingType);
     },
-
+    
+    applySortingMethod: function (sortingType) {
+        this.pageConfig.currentPage = 0;
+        this.userList.innerHTML = "";
+        this.buildUsersList(config.sortingConfig[sortingType]);
+    },
 
 
 }
