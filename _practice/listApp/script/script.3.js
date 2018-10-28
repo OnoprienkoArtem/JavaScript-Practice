@@ -88,6 +88,9 @@ BasicList.prototype = {
         this.userList.innerHTML = "";
         this.buildUsersList(config.sortingConfig[sortingType]);
     },
-
+    
+	getNextPage: function () {
+	    return this.usersListData;
+	},
 
 }
