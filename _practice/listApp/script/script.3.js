@@ -93,4 +93,12 @@ BasicList.prototype = {
 	    return this.usersListData;
 	},
 
+    buildUsersList: function (filterSortFunction) {
+        let page = this.getNextPage();
+        filterSortFunction && (page = filterSortFunction(page));
+        let result = page.map(item => listService.tableTemplate(item));
+        this.userList.innerHTML += result.join("");
+        listService.initTooltip();
+    },
+
 }
