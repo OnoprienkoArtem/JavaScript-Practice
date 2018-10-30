@@ -101,4 +101,10 @@ BasicList.prototype = {
         listService.initTooltip();
     },
 
+    initComponent: function () {
+        this.initListeners()
+        this.prepareUsersListData()
+        this.buildUsersList();
+    }
+
 }
