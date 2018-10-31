@@ -119,3 +119,12 @@ var PagingList = function () {
         currentPage: 0
     }
 }
+
+
+PagingList.prototype = {
+
+
+}
+
+
+listService.inheritance(BasicList, PagingList);
