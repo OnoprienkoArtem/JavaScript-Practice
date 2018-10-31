@@ -106,5 +106,16 @@ BasicList.prototype = {
         this.prepareUsersListData()
         this.buildUsersList();
     }
+}
 
+/*
+	Paging Class
+*/
+
+var PagingList = function () {
+    BasicList.apply(this);
+    this.pageConfig = {
+        itemsPerPage: 10,
+        currentPage: 0
+    }
 }
