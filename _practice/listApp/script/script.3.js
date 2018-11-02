@@ -123,7 +123,10 @@ var PagingList = function () {
 
 PagingList.prototype = {
 
-
+    initListeners: function () {
+        BasicList.prototype.initListeners.apply(this);
+        this.nextBtn.addEventListener("click", this.getNextPageHandler.bind(this));
+    },
 }
 
 
