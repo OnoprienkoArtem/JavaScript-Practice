@@ -127,6 +127,15 @@ PagingList.prototype = {
         BasicList.prototype.initListeners.apply(this);
         this.nextBtn.addEventListener("click", this.getNextPageHandler.bind(this));
     },
+
+    getNextPageHandler: function (event) {
+        event && event.preventDefault();
+        this.buildUsersList();
+        if (this.isMaxPage()) {
+            this.blockNextPage();
+            this.countStats();
+        }
+    },
 }
 
 
