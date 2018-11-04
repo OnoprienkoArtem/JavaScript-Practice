@@ -136,6 +136,10 @@ PagingList.prototype = {
             this.countStats();
         }
     },
+
+    isMaxPage: function () {
+        return (this.pageConfig.currentPage * this.pageConfig.itemsPerPage) >= this.usersListData.length;
+    },
 }
 
 
