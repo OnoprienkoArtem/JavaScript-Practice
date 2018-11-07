@@ -140,6 +140,10 @@ PagingList.prototype = {
     isMaxPage: function () {
         return (this.pageConfig.currentPage * this.pageConfig.itemsPerPage) >= this.usersListData.length;
     },
+
+    blockNextPage: function () {
+        this.nextBtn.classList.add("disabled");
+    },
 }
 
 
