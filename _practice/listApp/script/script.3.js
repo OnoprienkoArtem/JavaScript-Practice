@@ -144,6 +144,14 @@ PagingList.prototype = {
     blockNextPage: function () {
         this.nextBtn.classList.add("disabled");
     },
+
+    countStats: function () {
+        let stats = this.usersListData.reduce((sum, item) => {
+            (item.role == "Admin") ? sum.admins++ : sum.users++;
+            return sum;
+        }, { admins: 0, users: 0 });
+        this.statsInfo.innerHTML = `Статистика системы. Админов: ${stats.admins}, Пользователей: ${stats.users}`;
+    },
 }
 
 
