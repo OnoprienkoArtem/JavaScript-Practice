@@ -152,6 +152,14 @@ PagingList.prototype = {
         }, { admins: 0, users: 0 });
         this.statsInfo.innerHTML = `Статистика системы. Админов: ${stats.admins}, Пользователей: ${stats.users}`;
     },
+    
+    getNextPage: function () {
+        let start = this.pageConfig.itemsPerPage * this.pageConfig.currentPage;
+        let end = this.pageConfig.itemsPerPage + start;
+        this.pageConfig.currentPage++;
+        return this.usersListData.slice(start, end);
+    }
+
 }
 
 
