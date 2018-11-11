@@ -162,5 +162,7 @@ PagingList.prototype = {
 
 }
 
-
 listService.inheritance(BasicList, PagingList);
+
+let pagingList = new PagingList();
+pagingList.initComponent();
