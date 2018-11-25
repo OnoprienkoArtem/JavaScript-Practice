@@ -6,7 +6,7 @@ function binarySearch(a, target) {
     var high = a.length - 1;
 
     while (low <= high) {
-        var middle = low + (high - low) / 2;
+        var middle = Math.floor(low + (high - low) / 2);
 
         if(target < a[middle]) {
             high = middle - 1;
