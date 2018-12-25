@@ -1,4 +1,4 @@
-let object = {}; //literal
+let object = {}; //literal - чаще всего используется
 let newObject = new Object();
 // let createObject = Object.create();
 
