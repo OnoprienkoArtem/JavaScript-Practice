@@ -35,6 +35,7 @@ delete user1.secondName;
 console.log(user1);
 
 
+
 for (let key in user1) {
     console.log(user1[key]);
     console.log(key);
@@ -79,8 +80,12 @@ let userB = {
 
 let userC = userA;
 
-console.log(userA === userB);
-console.log(userA === userC);
+console.log(userA == userB); // false
+console.log(userA === userB); // false
+
+console.log(userA === userC); // true
+
+
 
 // copy object  -----------------------------
 let products = {
@@ -118,8 +123,10 @@ console.log(allGoods);
 
 
 
-// iteration   ----------
+// ITERATION  ----------
 
+
+//  for..in
 let productsA = {
     fruit: 'banana',
     vegetable: 'carrot',
@@ -142,7 +149,7 @@ let productsName = Object.keys(productsB);
 console.log(productsName);
 
 
-// spread 
+// spread -> ES6
 const programmer = {
     name: 'David',
     age: 30,
@@ -154,7 +161,7 @@ const userW = {
 }
 
 const newUser = {...programmer, ...userW};
-console.log(newUser);
+console.log(newUser); // { name: 'David', age: 30, editor: 'VS Code', editor: 'sublime text' }
 
 
 // destructuring
@@ -165,7 +172,7 @@ let productsD = {
 }
 
 const { juice, fruit, vegetable } = productsD;
-console.log(fruit);
+console.log(fruit); // banana
 
 
 
@@ -174,9 +181,9 @@ let productsF = {
     fruit: 'banana',
     vegetable: 'carrot'
 }
-
+//  если мы хоим другие имена переменным
 const { juice: j, fruit: b, vegetable: v } = productsF;
-console.log(j);
+console.log(j); // orange
 
 
 
@@ -191,12 +198,12 @@ console.log(f);
 
 
 let productsW = {
-    juice: 'orange',
+    juiceW: 'orange',
     fruit: 'banana',
     vegetable: 'carrot'
 }
 
+// rest оператор - оператор остатка
 const { juiceW, ...rest } = productsW;
-console.log(rest);
-
-
+console.log(juiceW); // orange
+console.log(rest); // { fruit: 'banana', vegetable: 'carrot' }
