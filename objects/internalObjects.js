@@ -1,8 +1,11 @@
 // STRING
 
 const user = 'John'; // литеральная нотация
+// const user = String('windows');
 const system = new String('windows');
 
+console.log(typeof user); // string
+console.log(typeof system); // object
 //  \n new line
 
 console.log(system.length); // длинна строки, нумерация начинается с 1
@@ -96,19 +99,25 @@ console.log(`Now you are listening ${songName(nameW)}`);
 const num = 35;
 const bigNumber = new Number(55);
 
+console.log(typeof num); // numv=ber
+console.log(typeof bigNumber); // object
+
+
 new Number('55'); // 55
 new Number('string');  //NaN
 
 Number.isNaN() // - определяет, является ли переданное в функцию значение NaN;
-Number.isFinite() // - определяет, является ли переданное в функцию значение конечным числом;
+Number.isFinite() // - определяет, является ли переданное в функцию значение конечным числом; (infinite)
 Number.parseInt() // - преобразовывает строку в число посимвольно;
 Number.parseFloat() // - преобразовывает строку в десятичное число с плавающей точкой;
+Number.isInteger() // - определяет, является ли переданное значение целым числом и возвращает true или false;
 
 
 
 
 //BOOLEAN
 const bool = false;
+// const objBool = Boolean(false);
 const objBool = new Boolean(false);
 
 console.log(typeof bool); // boolean
@@ -117,21 +126,31 @@ console.log(typeof objBool); // object
 //'', 0, null, false, NaN, undefined = false
 
 
-//DATE
+
+
+
+//DATE - объект, который используется для работы с датой и временем.
 // число миллисекунд от 1 января 1970
-const currentDate = new Date();
+const currentDate = new Date(); // верет текущий день -> Sun Dec 30 2018 23:22:33 GMT+0200 (EET)
 console.log(currentDate);
 
-// getFullYear
-// getMonth
-// getDate
-// getHours
-// getMinuter
-// getTime();
-// 
+
+// получаем
+// getFullYear(); - год в формате 4 цифр
+// getMonth(); - вернет номер месяца но с 0 (январь - 0)
+// getDate(); - число месяца 1 - 31
+// getHours();
+// getMinuter();
+// getTime(); - милисикунды с 1 января 1970
 
 
-// MATH
+// задаем
+// setFullYear();
+// и т.д.
+
+
+
+// MATH - объект, который содержит в себе множество математических констант и функций;
 
 // Math.floor();
 // Math.ceil();
@@ -139,5 +158,3 @@ console.log(currentDate);
 
 // Math.max();
 // Math.min();
-
-
