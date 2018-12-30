@@ -21,20 +21,21 @@ console.log(firstPos); //14 - index match
 const secondPos = text.indexOf('bad'); // если не находит то вернет -1
 console.log(secondPos); // -1 - not found
 
-const positon = text.lastIndexOf('is'); // yfxbyftn c rjywf cnhjrb
+const positon = text.lastIndexOf('is'); // поиск с конца строки, но нумерация сначала
 console.log(positon); // 22
-
+// можно указать второй не обязательный параметр, с какого символа искать
 
 
 const language = ' JavaScriot ';
 console.log(language);
 const trimLanguage = language.trim(); // Удаляет пробелы с начала и конца строки
 
-console.log(trimLanguage);
+console.log(trimLanguage); // 'JavaScriot'
 
 
 
-// substr(); - возвращает строку начиная с указаной позиции и указано длинны.
+
+// substr(); - возвращает строку начиная с указаной позиции и указаной длинны.
 const str = 'Life is good';
 const subString = str.substr(8, 4);
 console.log(subString); //good
@@ -42,20 +43,24 @@ const longString = str.substr(3);
 console.log(longString); //e is good
 
 
-// substring() - возвращает строку начиная с и до указанной позиции
+// substring() - возвращает строку начиная с и до указанной позиции.
 const substrString = str.substring(5, 7);
 console.log(substrString); //is
 
 const substrString1 = str.substring(-2);
-console.log(substrString1); //минут интерпретируется как 0
+console.log(substrString1); //минус интерпретируется как 0
 
 
 // slice() - возвращает строку начиная с и до указанной позиции, есть различие в работе с отрицательными числами.
 // если отрицательные то считает с конца строки
 
-//split() - разделает строку на массив по указанному разделителю
+
+
+//split() - разделает строку на массив по указанному разделителю (разделитель не входит в результат)
 const sepateted = text.split(',');
 console.log(sepateted);
+
+
 
 //concat() - объединфет строку в одну и возвращает новую.
 const good = 'Life is good';
@@ -70,15 +75,17 @@ console.log(text2);
 //лучше использовать +
 
 
-// шаблонные строки
+// шаблонные строки ES6 - способ создания строковых литералов.
 const name = 'John';
 console.log(`Hello ${name}`);
 
 const nameW = 'Life is good, life is great';
+
 function songName(words) {
     const song = 'Good Song:';
     return `${song} ${words}`;
 }
+
 console.log(`Now you are listening ${songName(nameW)}`);
 
 
@@ -91,6 +98,12 @@ const bigNumber = new Number(55);
 
 new Number('55'); // 55
 new Number('string');  //NaN
+
+Number.isNaN() // - определяет, является ли переданное в функцию значение NaN;
+Number.isFinite() // - определяет, является ли переданное в функцию значение конечным числом;
+Number.parseInt() // - преобразовывает строку в число посимвольно;
+Number.parseFloat() // - преобразовывает строку в десятичное число с плавающей точкой;
+
 
 
 
