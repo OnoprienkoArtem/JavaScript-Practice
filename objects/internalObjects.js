@@ -1,11 +1,11 @@
 // STRING
 
-const user = 'John';
+const user = 'John'; // литеральная нотация
 const system = new String('windows');
 
 //  \n new line
 
-console.log(system.length);
+console.log(system.length); // длинна строки, нумерация начинается с 1
 console.log(system.toLocaleLowerCase());
 console.log(system.toLocaleUpperCase());
 
@@ -15,13 +15,13 @@ console.log(system.toLocaleUpperCase());
 const text = 'Life is good, life is great';
 const key = 'life';
 
-const firstPos = text.indexOf(key);
+const firstPos = text.indexOf(key); // находит номер строки и возвращает номер позиции, нумерация с 0
 console.log(firstPos); //14 - index match
 
-const secondPos = text.indexOf('bad');
+const secondPos = text.indexOf('bad'); // если не находит то вернет -1
 console.log(secondPos); // -1 - not found
 
-const positon = text.lastIndexOf('is');
+const positon = text.lastIndexOf('is'); // yfxbyftn c rjywf cnhjrb
 console.log(positon); // 22
 
 
