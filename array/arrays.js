@@ -4,21 +4,21 @@ const newArray = new Array();
 console.log(typeof array); // object
 
 const array1 = ['HTML', 'CSS'];
-console.log(array1);
+console.log(array1); // ['HTML', 'CSS']
 
 array1[2] = 'JS';
-console.log(array1);
-console.log(array1.length);
+console.log(array1); // ['HTML', 'CSS', 'JS']
+console.log(array1.length); // 3
 
 
 let arrayG = [1, 2, 3, 4];
 let newArrayG = arrayG;
-console.log(arrayG);
-console.log(newArrayG);
+console.log(arrayG); // [1, 2, 3, 4];
+console.log(newArrayG); // [1, 2, 3, 4];
 
 newArrayG[2] = 555;
-console.log(arrayG);
-console.log(newArrayG);
+console.log(arrayG); // [1, 2, 555, 4];
+console.log(newArrayG); // [1, 2, 555, 4];
 
 
 
