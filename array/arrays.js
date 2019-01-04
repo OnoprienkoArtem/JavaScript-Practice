@@ -118,7 +118,8 @@ const rev = arrayRev.reverse();
 console.log(rev); // ["five", "four", "three", "two", "one"]
 
 
-// concat() - cоздает и возвращает новый массив, содержащий элементы исходного массива, и значения всех переданных аргументов.
+// concat() - cоздает и возвращает новый массив, содержащий элементы исходного массива,
+// и значения всех переданных аргументов.
 const arrayConcat = ['one', 'two', 'three', 'four', 'five'];
 const conc = arrayConcat.concat('six', 'seven');
 const concAr = arrayConcat.concat(['six', 'seven', 'eight']);
@@ -128,6 +129,7 @@ console.log(concAr); // ["one", "two", "three", "four", "five", "six", "seven", 
 
 // indexOf() - возвращает номер (index) искомого элемента в массиве. Если элемент не найден, то вернет -1.
 // lastIndexOf() - выполнфет то же самое, но поиск начинается с конца.
+// если совпадений несколько то возьмет с конца
 const arrayIndex = ['one', 'two', 'three', 'four', 'five'];
 console.log(arrayIndex.indexOf('three')); // 2
 console.log(arrayIndex.indexOf('six')); // -1
@@ -135,13 +137,14 @@ console.log(arrayIndex.indexOf('six')); // -1
 
 // .....  ES6  ...... //
 
-// SPREAD - оператор помогает как конкатенировать, так и копировать массив, при этом создается именно копия, а не 
-// передача по ссылке.
+// SPREAD - оператор помогает как конкатенировать, так и копировать массив, при этом создается именно копия, 
+// а не передача по ссылке.
 
 // конкатенация
 let arrayS = ['Angular', 'Rx'];
 let newArr = ['React', ...arrayS, 'Vue'];
 console.log(newArr); // ["React", "Angular", "Rx", "Vue"]
+
 
 // копирование (полная копия)
 let newArrW = ["React", "Angular", "Rx", "Vue"];
