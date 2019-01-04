@@ -42,7 +42,7 @@ console.log(arrayPop); // ['html', 'css', 'js']
 
 const deleted = arrayPop.pop();
 console.log(arrayPop); // ['html', 'css']
-console.log(deleted); //  ['js']
+console.log(deleted); //  js
 
 
 // unshift() - добавляет элементы или элемент в начало массива.
@@ -61,7 +61,8 @@ console.log(arrayShift); // ["css", "js"]
 console.log(deleted1); // html
 
 
-// join() - преобразовывает массив в строку с заданным разделителем. Если разделитель не указать, то разделяет запятой.
+// join() - преобразовывает массив в строку с заданным разделителем. 
+// Если разделитель не указать, то разделяет запятой.
 const arrayJoin = ['html', 'css', 'js'];
 console.log(arrayJoin); // ["html", "css", "js"]
 
@@ -79,7 +80,7 @@ const arrSplit = names.split(', ');
 console.log(arrSplit); // ["html", "css", "js"]
 
 
-// slice() - копирует часть массива от и до (не включая это значение)
+// slice() - копирует часть массива от и до (не включая это значение) и возвращает их.
 let arraySlice = ['Paul', 'John', 'Bill', 'Joe', 'Mark'];
 
 console.log(arraySlice.slice(0, 3)); // ["Paul", "John", "Bill"]
@@ -89,18 +90,22 @@ console.log(arraySlice.slice(-3, -2)); // ["Bill"]
 
 
 // splice() - универсальный метод, выполняющий вставку или удаление элементов массива.
+// первый аргумент определяет позицию с которой, второй определяет количество
+// изменяет текущий массив и возвращает
+// вырезает
 let arraySplice = ['one', 'two', 'three', 'four', 'five'];
 const line = arraySplice.splice(2, 1);
 
 console.log(arraySplice); // ["one", "two", "four", "five"]
 console.log(line); // ["three"]
 
-// вставка
+// вставка - замена
 const arraySpliceW = ['one', 'two', 'three', 'four', 'five'];
 const lineW = arraySpliceW.splice(2, 2, 'new', 'ELEMENT');
 console.log(arraySpliceW); // ["one", "two", "new", "ELEMENT", "five"]
 console.log(lineW); // ["three", "four"]
 
+// добавляем внутрь
 const arraySpliceQ = ['one', 'two', 'three', 'four', 'five'];
 const lineQ = arraySpliceQ.splice(3, 0, 'ELEMENT');
 console.log(arraySpliceQ); // ["one", "two", "three", "ELEMENT", "four", "five"]
