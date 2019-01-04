@@ -27,25 +27,25 @@ console.log(newArrayG); // [1, 2, 555, 4];
 // push() - добавляет в конец массива елементы и возвращает его.
 const array2 = ['html'];
 array2.push('css');
-console.log(array2);
+console.log(array2); // ['html', 'css']
 
 const newArray2 = ['HTML'];
 for (let i = 0; i <= 10; i++) {
     newArray2.push('new index is ' + i);
 }
-console.log(newArray2);
+console.log(newArray2); // ['HTML', new index is 0, new index is 1, new index is 2, new index is 3, и .т.д.]
 
 
 // pop() - удаляет последний элемент массиваб уменьшает длинну, и возвращает удаленное значение.
 const arrayPop = ['html', 'css', 'js'];
-console.log(arrayPop);
+console.log(arrayPop); // ['html', 'css', 'js']
 
 const deleted = arrayPop.pop();
-console.log(arrayPop);
-console.log(deleted);
+console.log(arrayPop); // ['html', 'css']
+console.log(deleted); //  ['js']
 
 
-// unshift() - добавляет элементы или элементы в начало массива.
+// unshift() - добавляет элементы или элемент в начало массива.
 const arrayUnshift = ['html', 'css', 'js'];
 console.log(arrayUnshift); //["html", "css", "js"]
 arrayUnshift.unshift(true);
