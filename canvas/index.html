@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+	<head>
+		<title>canvasExample</title>
+        <meta charset='utf-8' />
+
+        <style>
+
+            canvas {
+                border: 1px dashed black;
+            }
+
+        </style>
+	</head>
+	<body>
+		<canvas id="drawingCanvas" width="700" height="500"></canvas>
+
+
+		<script>
+            var canvas = document.getElementById("drawingCanvas");
+            var context = canvas.getContext("2d");
+
+            // Толщина и цвет кривой
+            context.lineWidth = 5;
+            context.strokeStyle = "rgb(16,155,252)";
+
+            // Устанавливаем начало кривой
+            context.moveTo(162, 242);
+
+            // Контрольные и конечная точки
+            var controlX_1 = 242;
+            var controlY_1 = 32;
+            var controlX_2 = 400;
+            var controlY_2 = 480;
+            var endPointX = 400;
+            var endPointY = 100;
+
+            // Рисуем кривую
+            context.bezierCurveTo(controlX_1, controlY_1, controlX_2, controlY_2, endPointX, endPointY);
+            context.stroke();
+
+			
+		</script>
+	</body>
+</html>
