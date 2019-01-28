@@ -9,6 +9,7 @@ console.log(document.head);
 
 
 // поиск DOM элементов
+
 // document.DocumentElement
 // document.head
 // document.body 
@@ -89,7 +90,7 @@ console.log(elDomEl.parentElement);
 // методы для работы с атрибутами:
 // element.hasAttribute() - выполняет проверку на наличие атрибута(возвращает true или false).
 // element.getAttribute() - получение значения арибута.
-// element.serAttribute() - установка значения атрибута.
+// element.setAttribute() - установка значения атрибута.
 // element.removeAttribute() - удаление атрибута.
 
 const element_1 = document.getElementById('main');

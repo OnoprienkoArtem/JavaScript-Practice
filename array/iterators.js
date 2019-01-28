@@ -93,14 +93,14 @@ console.log(createObject); // ["one", "two", "three", "four", "five"]
 
 
 
-// filter() - создает новый массив с отфильтрованными при помощи cakkback функции, значениями. 
+// filter() - создает новый массив с отфильтрованными при помощи callback функции, значениями. 
 // так же как и map(), но в новый массив попадут только те значения, которые прошли проверку в callback функции.
 
 const arrayFilter = ['one', 1, 'two', 'three', 7, 'four', true, 'five'];
 let newArrayFilter = arrayFilter.filter(item => item == 'four');
 console.log(newArrayFilter); // ["four"]
 
-const arrayFilter_1 = ['one', 1, 'two', 'three', 7, 'four', true, 'five'];
+const arrayFilter_1 = ['one', 1, 'two', 'three', 7, 'four', true, 'five'];d
 let newArrayFilter_1 = arrayFilter_1.filter(item => typeof item === 'string');
 console.log(newArrayFilter_1); // ["one", "two", "three", "four", "five"]
 
