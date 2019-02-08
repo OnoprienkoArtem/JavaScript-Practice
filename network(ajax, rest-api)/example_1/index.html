@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>async with timeout</title>
+    <script>
+        window.onload = function() {
+            document.getElementById('buttonGet').onclick = function() {
+                var xhr = new XMLHttpRequest();
+
+                var timeout = 3000;
+
+                var timer = setTimeout(function() { xhr.abort(); alert('aborted'); }, timeout);
+
+                xhr.open('GET', 'TestHandler.ashx');
+
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        clearTimeout(timer);
+                        document.getElementById('output').innerHTML = xhr.responseText;
+                    }
+                }
+                xhr.send();
+            }
+        }
+    </script>
+</head>
+<body>
+
+
+    <input type="button" id='buttonGet' value='Get Data' />
+    <p id="output"></p>
+</body>
+</html>
