@@ -47,7 +47,7 @@ function RoomSecond(name, area, number) {
         return `Type of room: ${this.name}, area: ${this.area}`;
     }
 
-    this.getFullDescriotion = () => {  // публичное свойство
+    this.getFullDescriotion = () => { // публичной метод
         const info = showInfo();
         console.log(`${info}. It's ${this.number} of ${quantity} room.`);
     }
