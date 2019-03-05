@@ -63,8 +63,13 @@ const makeRequest = new Promise(function(resolve, reject) {
 // глобальный метод fetch позволяет, как и XMLHttpRequest, отправлять ясинхронный запрос по сети. Преимуществом fetch является
 // упрощенный синтаксис, он возвращает Promise, позволяет легче конфигурировать запросы.
 
-
-
+fetch('https://jsonplaceholder.typicode.com/posts?userId=1')
+    .then((response) => {
+        return response.json();
+    })
+    .then((data) => {
+        console.log(data);
+    });
 
 
 
