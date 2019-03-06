@@ -63,6 +63,8 @@ const makeRequest = new Promise(function(resolve, reject) {
 // глобальный метод fetch позволяет, как и XMLHttpRequest, отправлять ясинхронный запрос по сети. Преимуществом fetch является
 // упрощенный синтаксис, он возвращает Promise, позволяет легче конфигурировать запросы.
 
+
+    // GET
 fetch('https://jsonplaceholder.typicode.com/posts?userId=1')
     .then((response) => {
         return response.json();
@@ -75,3 +77,71 @@ fetch('https://jsonplaceholder.typicode.com/posts?userId=1')
 
 
 
+fetch('https://jsonplaceholder.typicode.com/posts?userId=1')
+    .then((response) => {
+        console.log(response.headers.get('Content-Type'));
+        console.log(response.status);
+        console.log(response.url);
+    });
+
+
+
+
+const options = {
+    method: 'post',
+    headers: {
+        'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8' 
+    },
+    body: 'title=foo&body=bar&user=1'
+}
+
+fetch('https://jsonplaceholder.typicode.com/posts', options)
+    .then((response) => {
+        return response.json();
+    })
+    .then((data) => {
+        console.log(data);
+    })
+    .catch((error) => {
+        console.log(error);
+    });
+
+
+
+
+// Async/await
+
+// конструкция async/await позволяет реализовать асинхронные функции.
+
+// Ключевое слово async, написанное перед функцией, определяет, что функция является асинхронной
+// (такая функция возвращает Promise) и позволяет использовать внутри нее оператор await, который
+// приостанавливает выполнение функции, на время получения результата.
+
+// Приостановленная с помощью await функция, так же должна возвращать Promise.
+
+
+const getProducts = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(['bread', 'water', 'oil'])
+        }, 2000)
+    });
+};
+
+const buy = (products) => {
+    const msg = `You bought: ${products.length} products.`;
+    return Promise.resolve(msg);
+};
+
+async function order() {
+    let products = await getProducts();
+    let orderMessage = await buy(products);
+
+    return orderMessage;
+}
+
+order()
+    .then((response) => {
+        console.log(response);
+    });
+// You bought: 3 products.
