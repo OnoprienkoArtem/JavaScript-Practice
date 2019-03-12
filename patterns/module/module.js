@@ -121,3 +121,36 @@ calculateR.getNumbers(); // 31,42,5,34,8
 
 // как правило, переменные или константы внутри модуля не делают публичными, если небходимо получить 
 // или установить значение можно с помощью специальных методов (get and set)
+
+
+
+
+
+// -------------------
+
+let Cafee = (function() {
+    let money = 10;
+
+    // приватные методы
+    const countMoney = function(value) {
+        console.log('Кофе успешно продано');
+        money += value;
+    };
+
+    const getCoffe = function() {
+        console.log('Возьмите Ваше кофе!');
+    }
+
+    const payForCoffe = function(value) {
+        countMoney(value);
+    }
+
+    // публичный интерфейс
+    return {
+        getCoffe: getCoffe,
+        payForCoffe: payForCoffe
+    }
+})();
+
+Cafee.getCoffe();
+Cafee.payForCoffe(5);
