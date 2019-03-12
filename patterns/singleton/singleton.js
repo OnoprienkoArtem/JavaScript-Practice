@@ -16,7 +16,7 @@ var Singleton = (function() {
 function run() {
     var instance1 = Singleton.init();
     var instance2 = Singleton.init();
-    console.log('Equals ' + (instance1 === instance2);
+    console.log('Equals ' + (instance1 === instance2));
 };
 
 run();
