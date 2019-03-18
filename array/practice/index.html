@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <canvas id="canvas" width="50" height="200"></canvas>
+    
+</body>
+
+
+
+<script>
+
+var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext('2d');
+
+ctx.beginPath();
+ctx.strokeStyle = '#2f80ed';
+ctx.lineWidth = '1.5';
+ctx.moveTo(49, 2);
+ctx.bezierCurveTo(0, 10, 50, 190, 2, 198);
+ctx.stroke();
+
+ctx.fillStyle = '#2f80ed';
+ctx.beginPath();
+ctx.arc(47, 3, 3, 0, 2 * Math.PI); 
+ctx.arc(3, 197, 3, 0, 2 * Math.PI); 
+ctx.fill();
+
+
+
+
+const arr1 = [
+    {
+        icon: "http://bd-dev.com/uploads/payment/ae7c237b8427ca79bffd01e4c47651a7.png",
+        id: 2,
+        name: "yandex",
+        status: []
+    },
+    {
+        icon: "http://bd-dev.com/uploads/payment/226c76305cdb0450f4bd79cb71a9afa9.png",
+        id: 3,
+        name: "Web Money",
+        status: []
+    },
+    {
+        icon: "http://bd-dev.com/uploads/payment/2211262bdbb2a76cc3b06f6c0ee05d39.png",
+        id: 1,
+        name: "visa",
+        status: []
+    }
+];
+
+
+const arr2 = [
+    {
+        name: { id: 1, name: "visa" },
+        status: "ACCEPTED" 
+    },
+    {
+        name: { id: 2, name: "yandex" },
+        status: "ACCEPTED"
+    },
+    {
+        name: { id: 1, name: "visa" },
+        status: "UNDER_REVIEW"
+    },
+    {
+        name: { id: 2, name: "yandex" },
+        status: "UNDER_REVIEW"
+    },
+    {
+        name: { id: 3, name: "Web Money" },
+        status: "UNDER_REVIEW"
+    }
+];
+
+var output = _.chain(arr2)
+    .groupBy(function(x){ return x.name; })
+    .map(function(g, k) { return { name: k, value: _.pluck(g, 'value') }; })
+    .value();
+console.log(output);
+
+
+let visa = arr2.filter(item => item.name.name == 'visa');
+console.log(visa);
+
+let yandex = arr2.filter(item => item.name.name == 'yandex');
+console.log(yandex);
+
+let webMoney = arr2.filter(item => item.name.name == 'Web Money');
+console.log(webMoney);
+
+
+
+arr1.map(item => {
+    arr2.find(x => {
+        if (x.name.name == item.id) {
+            item.status.push('1');
+        } 
+    }) 
+});
+
+
+
+console.log(arr1);
+
+
+
+
+const arr3 = [
+    {
+        icon: "ae7c237b8427ca79bffd01e4c47651a7.png",
+        id: 2,
+        name: "yandex",
+        status: ["ACCEPTED", "UNDER_REVIEW"]
+    },
+    {
+        icon: "226c76305cdb0450f4bd79cb71a9afa9.png",
+        id: 3,
+        name: "Web Money",
+        status: ["UNDER_REVIEW"]
+    },
+    {
+        icon: "2211262bdbb2a76cc3b06f6c0ee05d39.png",
+        id: 1,
+        name: "visa",
+        status: ["UNDER_REVIEW", "ACCEPTED"]
+    }
+];
+
+
+
+
+
+
+</script>
+
+</html>
