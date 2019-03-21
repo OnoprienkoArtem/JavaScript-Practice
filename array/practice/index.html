@@ -72,9 +72,7 @@
 
 
     let paymentSystems = arr1.map(paymentSystem => {
-        const wallets = arr2.filter(
-            wallet => wallet.name.id == paymentSystem.id
-        );
+        const wallets = arr2.filter(wallet => wallet.name.id == paymentSystem.id);
 
         let status = "";
 
@@ -93,7 +91,6 @@
             wallets: wallets,
             status: status
         }
-
     });
 
     console.log(paymentSystems);
@@ -101,22 +98,6 @@
 
 
 
-    const arr3 = [{
-            id: 2,
-            name: "yandex",
-            status: ["ACCEPTED", "UNDER_REVIEW"]
-        },
-        {
-            id: 3,
-            name: "Web Money",
-            status: ["UNDER_REVIEW"]
-        },
-        {
-            id: 1,
-            name: "visa",
-            status: ["UNDER_REVIEW", "ACCEPTED"]
-        }
-    ];
 </script>
 
 </html>
