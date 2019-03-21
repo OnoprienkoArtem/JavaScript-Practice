@@ -58,7 +58,7 @@
                 id: 2,
                 name: "yandex"
             },
-            status: "UNDER_REVIEW"
+            status: "REFUSED"
         },
         {
             name: {
@@ -72,15 +72,26 @@
 
 
     let paymentSystems = arr1.map(paymentSystem => {
-
         const wallets = arr2.filter(
             wallet => wallet.name.id == paymentSystem.id
         );
 
-        console.log(wallets);
+        let status = "";
+
+        if (wallets.find(wallet => wallet.status == "ACCEPTED")) {
+            status = "ACCEPTED";
+        }
+        if (wallets.find(wallet => wallet.status == "UNDER_REVIEW")) {
+            status = "UNDER_REVIEW";
+        }
+        if (wallets.find(wallet => wallet.status == "REFUSED")) {
+            status = "REFUSED";
+        }       
 
         return {
-
+            paymentSystem: paymentSystem,
+            wallets: wallets,
+            status: status
         }
 
     });
