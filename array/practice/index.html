@@ -1,96 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
 
     <canvas id="canvas" width="50" height="200"></canvas>
-    
+
 </body>
 
 
 
 <script>
+    const arr1 = [{
+            id: 2,
+            name: "yandex",
+            status: []
+        },
+        {
+            id: 3,
+            name: "Web Money",
+            status: []
+        },
+        {
+            id: 1,
+            name: "visa",
+            status: []
+        }
+    ];
 
 
-const arr1 = [
-    {        
-        id: 2,
-        name: "yandex",
-        status: []
-    },
-    {       
-        id: 3,
-        name: "Web Money",
-        status: []
-    },
-    {       
-        id: 1,
-        name: "visa",
-        status: []
-    }
-];
-
-
-const arr2 = [
-    {
-        name: { id: 1, name: "visa" },
-        status: "ACCEPTED" 
-    },
-    {
-        name: { id: 2, name: "yandex" },
-        status: "ACCEPTED"
-    },
-    {
-        name: { id: 1, name: "visa" },
-        status: "UNDER_REVIEW"
-    },
-    {
-        name: { id: 2, name: "yandex" },
-        status: "UNDER_REVIEW"
-    },
-    {
-        name: { id: 3, name: "Web Money" },
-        status: "UNDER_REVIEW"
-    }
-];
+    const arr2 = [{
+            name: {
+                id: 1,
+                name: "visa"
+            },
+            status: "ACCEPTED"
+        },
+        {
+            name: {
+                id: 2,
+                name: "yandex"
+            },
+            status: "ACCEPTED"
+        },
+        {
+            name: {
+                id: 1,
+                name: "visa"
+            },
+            status: "UNDER_REVIEW"
+        },
+        {
+            name: {
+                id: 2,
+                name: "yandex"
+            },
+            status: "UNDER_REVIEW"
+        },
+        {
+            name: {
+                id: 3,
+                name: "Web Money"
+            },
+            status: "UNDER_REVIEW"
+        }
+    ];
 
 
 
+    let paymentSystems = arr1.map(paymentSystem => {
 
+        console.log(paymentSystem);
 
+        return {
+            
+        }
 
+    });
 
-
-
-
-const arr3 = [
-    {      
-        id: 2,
-        name: "yandex",
-        status: ["ACCEPTED", "UNDER_REVIEW"]
-    },
-    {       
-        id: 3,
-        name: "Web Money",
-        status: ["UNDER_REVIEW"]
-    },
-    {       
-        id: 1,
-        name: "visa",
-        status: ["UNDER_REVIEW", "ACCEPTED"]
-    }
-];
-
+console.log(paymentSystems);
 
 
 
 
-
+    const arr3 = [{
+            id: 2,
+            name: "yandex",
+            status: ["ACCEPTED", "UNDER_REVIEW"]
+        },
+        {
+            id: 3,
+            name: "Web Money",
+            status: ["UNDER_REVIEW"]
+        },
+        {
+            id: 1,
+            name: "visa",
+            status: ["UNDER_REVIEW", "ACCEPTED"]
+        }
+    ];
 </script>
 
 </html>
