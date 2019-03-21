@@ -19,18 +19,15 @@
 <script>
     const arr1 = [{
             id: 2,
-            name: "yandex",
-            status: []
+            name: "yandex"
         },
         {
             id: 3,
-            name: "Web Money",
-            status: []
+            name: "Web Money"
         },
         {
             id: 1,
-            name: "visa",
-            status: []
+            name: "visa"
         }
     ];
 
@@ -76,15 +73,19 @@
 
     let paymentSystems = arr1.map(paymentSystem => {
 
-        console.log(paymentSystem);
+        const wallets = arr2.filter(
+            wallet => wallet.name.id == paymentSystem.id
+        );
+
+        console.log(wallets);
 
         return {
-            
+
         }
 
     });
 
-console.log(paymentSystems);
+    console.log(paymentSystems);
 
 
 
