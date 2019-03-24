@@ -67,7 +67,8 @@
 
 
 
-    let paymentSystems = arr1.map(paymentSystem => {
+    let paymentSystems = arr1.map(paymentSystem => {        
+
         const wallets = arr2.filter(wallet => wallet.name.id == paymentSystem.id);
 
         let status = "";
