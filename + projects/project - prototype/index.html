@@ -8,7 +8,6 @@
     <title>Форма входа</title>
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <link href="css/style.css" rel="stylesheet">
 </head>
@@ -17,68 +16,72 @@
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
         <h5 class="my-0 mr-md-auto font-weight-normal">JSExpert</h5>
         <nav class="my-2 my-md-0 mr-md-3">
-            <a class="p-2 text-dark" href="#">Галлерея</a>
-            <a class="p-2 text-dark" href="#">О пользователе</a>
+            <a class="p-2 text-dark" href="#" id="galleryButton">Галлерея</a>
+            <a class="p-2 text-dark" href="#" id="userPageButton">О пользователе</a>
         </nav>
-        <a class="btn btn-outline-primary" href="#">Выход</a>
+        <a class="btn btn-outline-primary" href="#" id="logOutButton">Выход</a>
     </div>
 
-    <main class="text-center" role="main">
-        <div class="alert alert-danger" role="alert">
+    <main class="text-center" role="main" id="loginContainer">
+        <div class="alert alert-danger hide" role="alert" id="alertBox">
             This is a danger alert—check it out!
         </div>
         <form class="form-signin">
 
             <h1 class="h3 mb-3 font-weight-normal">Пожалуйста войдите</h1>
             <label for="inputEmail" class="sr-only">Email</label>
+            <p>admin@index.com</p>
+            <!--<input value="admin@index.com" type="text" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;" autocomplete="off">-->
             <input type="text" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus=""
                 style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;"
                 autocomplete="off">
             <div class="mb-3"></div>
             <label for="inputPassword" class="sr-only">Пароль</label>
+            <p>12341234</p>
+            <!--<input value="12341234" type="text" id="inputPassword" class="form-control" placeholder="Password" required="" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;" autocomplete="off">-->
             <input type="text" id="inputPassword" class="form-control" placeholder="Password" required=""
                 style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;"
                 autocomplete="off">
             <div class="mb-3"></div>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Войти</button>
+            <button class="btn btn-lg btn-primary btn-block" type="submit" id="signButton">Войти</button>
             <p class="mt-5 mb-3 text-muted">© 2017-2018</p>
         </form>
     </main>
 
 
-    <main role="main">
+    <main role="main" id="galleryContainer">
         <section class="jumbotron text-center">
             <div class="container">
                 <h1 class="jumbotron-heading">Автомобильная галлерея</h1>
                 <p class="lead text-muted">На этой странице вы можете увидеть отличную галлерею, которая дает вам
                     возможность ознакомится с нашим каталогом транспортных средств. </p>
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
 
                         <div class="btn-group" id="dropdown-name">
-                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
-                                Фильтровать по имени
-                            </button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Вперед: от А до Я</a>
-                                <a class="dropdown-item" href="#">Назад: от Я до А</a>
-                            </div>
+                            <select id="sort-selector" class="form-control">
+                                <option value="1">По имени А — Я</option>
+                                <option value="2">По имени Я — А</option>
+                                <option value="3">Сначала новые</option>
+                                <option value="4">Сначала старые</option>
+                            </select>
                         </div>
+
+
+
                     </div>
 
-                    <div class="col-md-5">
-                        <div class="btn-group" id="dropdown-date">
-                            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
-                                Фильтровать по дате
-                            </button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" date-type="new" href="#">Сначала новые</a>
-                                <a class="dropdown-item" date-type="old" href="#">Сначала старые</a>
-                            </div>
-                        </div>
-                    </div>
+                    <!--<div class="col-md-5">-->
+                    <!--<div class="btn-group" id="dropdown-date">-->
+                    <!--<button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+                    <!--Фильтровать по дате-->
+                    <!--</button>-->
+                    <!--<div class="dropdown-menu">-->
+                    <!--<a class="dropdown-item" date-type="new" href="#">Сначала новые</a>-->
+                    <!--<a class="dropdown-item" date-type="old" href="#">Сначала старые</a>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</div>-->
 
 
                 </div>
@@ -91,125 +94,38 @@
         <div class="album py-5 bg-light">
             <div class="container">
                 <div class="row" id="gallery">
-                    <div class="col-md-4">
-                        <div class="card mb-4 box-shadow">
-                            <img class="card-img-top"
-                                data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
-                                alt="CHEVROLET" src="http://desktopwallpapers.org.ua/mini/201507/40069.jpg"
-                                data-holder-rendered="true" style="height: 225px; width: 100%; display: block;">
-                            <div class="card-body">
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-outline-secondary">View</button>
-                                        <button type="button" class="btn btn-outline-secondary">Edit</button>
-                                    </div>
-                                    <a href="#" class="btn btn-danger">Удалить</a>
-                                    <small class="text-muted">25 Jan 2015</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card mb-4 box-shadow">
-                            <img class="card-img-top"
-                                data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
-                                alt="DEWOO" src="http://desktopwallpapers.org.ua/mini/201507/40068.jpg"
-                                data-holder-rendered="true" style="height: 225px; width: 100%; display: block;">
-                            <div class="card-body">
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-outline-secondary">View</button>
-                                        <button type="button" class="btn btn-outline-secondary">Edit</button>
-                                    </div>
-                                    <a href="#" class="btn btn-danger">Удалить</a>
-                                    <small class="text-muted">13 Jan 2015</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card mb-4 box-shadow">
-                            <img class="card-img-top"
-                                data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
-                                alt="FOLKSWAGEN" src="http://desktopwallpapers.org.ua/mini/201507/40067.jpg"
-                                data-holder-rendered="true" style="height: 225px; width: 100%; display: block;">
-                            <div class="card-body">
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-outline-secondary">View</button>
-                                        <button type="button" class="btn btn-outline-secondary">Edit</button>
-                                    </div>
-                                    <a href="#" class="btn btn-danger">Удалить</a>
-                                    <small class="text-muted">12 Mar 2015</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card mb-4 box-shadow">
-                            <img class="card-img-top"
-                                data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
-                                alt="FERRARI" src="http://desktopwallpapers.org.ua/mini/201507/40057.jpg"
-                                data-holder-rendered="true" style="height: 225px; width: 100%; display: block;">
-                            <div class="card-body">
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-outline-secondary">View</button>
-                                        <button type="button" class="btn btn-outline-secondary">Edit</button>
-                                    </div>
-                                    <a href="#" class="btn btn-danger">Удалить</a>
-                                    <small class="text-muted">04 Apr 2015</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card mb-4 box-shadow">
-                            <img class="card-img-top"
-                                data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
-                                alt="BMW" src="http://desktopwallpapers.org.ua/mini/201507/40066.jpg"
-                                data-holder-rendered="true" style="height: 225px; width: 100%; display: block;">
-                            <div class="card-body">
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-outline-secondary">View</button>
-                                        <button type="button" class="btn btn-outline-secondary">Edit</button>
-                                    </div>
-                                    <a href="#" class="btn btn-danger">Удалить</a>
-                                    <small class="text-muted">07 Jun 2014</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-                <div class="text-center">
-                    <a href="#" id="next-page" class="btn btn-primary my-2">Добавить картинку</a>
+                <div class="col-lg-12 col-md-12 play">
+                    <button class="btn btn-primary" id="play" title="Добавить одно изображение">Добавить
+                        изображение</button>
                 </div>
 
             </div>
         </div>
     </main>
 
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
-        integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
-    <script src="https://getbootstrap.com/assets/js/vendor/popper.min.js"></script>
-    <script src="https://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+    <main role="main" id="userContainer">
+        <form id="userPage" class="form-signin">
+            <div style="margin-bottom: 10px;">
+                <h1 class="h3 mb-3 font-weight-normal">Страничка пользователя</h1>
+                <p style="margin-top: 30px">Ваш логин</p>
+                <input disabled type="text" id="userLogin">
+                <p style="margin-top: 30px">Ваш пароль</p>
+                <input disabled type="password" id="userPassword">
+            </div>
 
-    <script src=js/data.js> </script> 
-    <script src=js/service.js> </script> 
-    <script src=js/main.1.js> </script> 
-    
-    </body>
+            <button class="btn btn-lg btn-primary btn-block" type="button" id="showPasswordButton">Показать
+                пароль</button>
+        </form>
+    </main>
+
+    <script src="js/data.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/gallery.js"></script>
+    <script src="js/user.js"></script>
+    <script src="js/validator.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
 </html>
