@@ -46,7 +46,20 @@ ValidatorModule.prototype = {
         }
     },
 
-
+    isHasEmptyField: function isHasEmptyField(user) {
+        if (user.login && user.password) {
+            if (this.checkEmail(user.login) && this.checkPassword(user.password)) {
+                return -1;
+            } else if (!this.checkEmail(user.login)) {
+                return 3;
+            } else if (!this.checkPassword(user.password)) {
+                return 4;
+            }
+        }
+        if (user.login) return 2;
+        if (user.password) return 1;
+        return 0;
+    },
 
 
 };
