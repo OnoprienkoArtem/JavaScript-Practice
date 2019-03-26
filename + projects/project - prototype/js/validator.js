@@ -61,5 +61,17 @@ ValidatorModule.prototype = {
         return 0;
     },
 
+    authorize: function authorize(user) {
+        return user.login === this.user.login &&
+            user.password === this.user.password;
+    },
+    checkEmail: function (email) {
+        const emailRegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return emailRegExp.test(email);
+    },
+
+    checkPassword: function (password) {
+        return password.length >= 8;
+    }
 
 };
