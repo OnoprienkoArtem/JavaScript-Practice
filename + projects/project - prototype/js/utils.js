@@ -10,7 +10,18 @@ const utils = {
             }
         }
     },
-
+    'format': function (data) {
+        return data.map(item => {
+            return {
+                url: this.formatUrl(item.url),
+                name: this.formatName(item.name),
+                id: item.id,
+                description: this.formatDescription(item.description),
+                date: item.date,
+                dateString: this.formatDate(item.date)
+            }
+        })
+    },
 
  
 };
