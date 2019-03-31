@@ -10,7 +10,7 @@ const utils = {
             }
         }
     },
-    
+
     'format': function (data) {
         return data.map(item => {
             return {
@@ -27,6 +27,18 @@ const utils = {
     'formatName': function (name) {
         name = name.trim();
         return name[0].toUpperCase() + name.slice(1, name.length).toLowerCase();
+    },
+
+    'formatDescription': function (description) {
+        if (description.length >= 15) {
+            return description.slice(0, 15) + "...";
+        }
+        return description;
+    },
+
+    'formatUrl': function (url) {
+        if (url.startsWith("http://")) return url;
+        return "http://" + url;
     },
 
  
