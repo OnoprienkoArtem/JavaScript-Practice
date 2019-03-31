@@ -10,6 +10,7 @@ const utils = {
             }
         }
     },
+    
     'format': function (data) {
         return data.map(item => {
             return {
@@ -21,6 +22,11 @@ const utils = {
                 dateString: this.formatDate(item.date)
             }
         })
+    },
+
+    'formatName': function (name) {
+        name = name.trim();
+        return name[0].toUpperCase() + name.slice(1, name.length).toLowerCase();
     },
 
  
