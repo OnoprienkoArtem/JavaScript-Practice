@@ -41,5 +41,12 @@ const utils = {
         return "http://" + url;
     },
 
+    'formatUtil': function (value, shift = 0) {
+        if (+value < 10 - shift) {
+            return `0${value + shift}`;
+        }
+        return `${value}`;
+    },
+
  
 };
