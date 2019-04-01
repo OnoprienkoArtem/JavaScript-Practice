@@ -48,5 +48,21 @@ const utils = {
         return `${value}`;
     },
 
- 
+    'formatDate': function (date) {
+        date = parseInt(date); // ? NaN
+
+        if (Number.isNaN(date) === true) date = +new Date();
+
+        if (window.moment) {
+            console.log("Found moment.js!");
+            return moment(date).format("YYYY/MM/DD HH:mm");
+        } else {
+            date = new Date(date);
+            return `${date.getFullYear()}/\
+                    ${this.formatUtil(date.getMonth(), 1)}/\
+                    ${this.formatUtil(date.getDate())} \
+                    ${this.formatUtil(date.getHours())}:\
+                    ${this.formatUtil(date.getMinutes())}`;
+        }
+    } 
 };
