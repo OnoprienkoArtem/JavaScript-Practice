@@ -1,0 +1,25 @@
+const UserModule = function (view) {
+    this.view = view;
+    this.isShow = false;
+};
+
+UserModule.prototype = {
+    init: function () {
+        this.hide();
+        this.view.showPasswordButton.addEventListener('click', event => {
+            event.preventDefault();
+            if (!this.isShow) {
+                this.view.userPassword.setAttribute('type', 'text');
+                this.view.showPasswordButton.innerText = 'Скрыть пароль';
+                this.isShow = true;
+            } else {
+                this.view.userPassword.setAttribute('type', 'password');
+                this.view.showPasswordButton.innerText = 'Показать пароль';
+                this.isShow = false;
+            }
+        });
+    },
+
+
+
+};
