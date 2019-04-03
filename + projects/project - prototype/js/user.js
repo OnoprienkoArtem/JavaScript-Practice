@@ -19,7 +19,11 @@ UserModule.prototype = {
             }
         });
     },
-
-
+    
+    show: function () {
+        this.view.userLogin.value = this.view.loginInput.value;
+        this.view.userPassword.value = this.view.passwordInput.value;
+        this.view.container.classList.remove('hide');
+    },
 
 };
