@@ -13,11 +13,31 @@ const LoginModule = function (validatorModule, galleryModule, userModule, view) 
         this.view.userPageButton,
         this.view.galleryButton,
         this.view.logOutButton
-    ];   
+    ];
 };
 
 LoginModule.prototype = {
 
- 
+    initComponent: function () {
+        this.gallery.init();
+        this.userPage.init(this.getInputsValues());
+
+        this.navBlock.map(el => el.classList.add('hide'));
+
+        this.view.signButton.addEventListener('click', (event) => {
+            event.preventDefault();
+            const login = this.validateUserData();
+            if (login.status) {
+                this.navBlock.map(el => el.classList.remove('hide'));
+                this.showGallery();
+                this.showActiveRoute('gallery');
+            } else {
+                this.showAlert(login.msg);
+            }
+        });
+
+        
+
+    },
 
 };
