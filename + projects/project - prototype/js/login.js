@@ -36,6 +36,29 @@ LoginModule.prototype = {
             }
         });
 
+        this.view.galleryButton.addEventListener('click', (event) => {
+            event.preventDefault();
+            this.userPage.hide();
+            this.gallery.show();
+            this.showActiveRoute('gallery');
+        });
+
+        this.view.userPageButton.addEventListener('click', (event) => {
+            event.preventDefault();
+            this.gallery.hide();
+            this.userPage.show();
+            this.showActiveRoute('user-page');
+        });
+
+        this.view.logOutButton.addEventListener('click', (event) => {
+            event.preventDefault();
+            this.navBlock.map(el => el.classList.add('hide'));
+            this.gallery.hide();
+            this.userPage.hide();
+            this.clearInputsValues();
+            this.view.container.classList.remove('hide');
+        });
+
         
 
     },
