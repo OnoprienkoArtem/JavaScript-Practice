@@ -64,4 +64,9 @@ LoginModule.prototype = {
         return this.validator.isValid(this.getInputsValues());
     },
 
+    showGallery: function () {
+        this.view.container.classList.add('hide');
+        this.gallery.show();
+    },
+
 };
