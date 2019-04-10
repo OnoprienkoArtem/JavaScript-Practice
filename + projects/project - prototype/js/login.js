@@ -57,10 +57,11 @@ LoginModule.prototype = {
             this.userPage.hide();
             this.clearInputsValues();
             this.view.container.classList.remove('hide');
-        });
+        });  
+    },
 
-        
-
+    validateUserData: function () {
+        return this.validator.isValid(this.getInputsValues());
     },
 
 };
