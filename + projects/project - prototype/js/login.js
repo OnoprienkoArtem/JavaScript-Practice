@@ -69,4 +69,15 @@ LoginModule.prototype = {
         this.gallery.show();
     },
 
+    showActiveRoute: function (route) {
+        this.navBlock.map(el => el.classList.remove('active'));
+        if (route === 'gallery') {
+            this.view.galleryButton.classList.add('active')
+        }
+        if (route === 'user-page') {
+            this.view.userPageButton.classList.add('active')
+        }
+    },
+    
+
 };
