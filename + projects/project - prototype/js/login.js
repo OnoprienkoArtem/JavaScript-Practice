@@ -17,82 +17,85 @@ const LoginModule = function (validatorModule, galleryModule, userModule, view) 
 };
 
 LoginModule.prototype = {
+	initComponent: function() {
+		this.gallery.init();
+		this.userPage.init(this.getInputsValues());
 
-    initComponent: function () {
-        this.gallery.init();
-        this.userPage.init(this.getInputsValues());
+		this.navBlock.map(el => el.classList.add("hide"));
 
-        this.navBlock.map(el => el.classList.add('hide'));
+		this.view.signButton.addEventListener("click", event => {
+			event.preventDefault();
+			const login = this.validateUserData();
+			if (login.status) {
+				this.navBlock.map(el => el.classList.remove("hide"));
+				this.showGallery();
+				this.showActiveRoute("gallery");
+			} else {
+				this.showAlert(login.msg);
+			}
+		});
 
-        this.view.signButton.addEventListener('click', (event) => {
-            event.preventDefault();
-            const login = this.validateUserData();
-            if (login.status) {
-                this.navBlock.map(el => el.classList.remove('hide'));
-                this.showGallery();
-                this.showActiveRoute('gallery');
-            } else {
-                this.showAlert(login.msg);
-            }
-        });
+		this.view.galleryButton.addEventListener("click", event => {
+			event.preventDefault();
+			this.userPage.hide();
+			this.gallery.show();
+			this.showActiveRoute("gallery");
+		});
 
-        this.view.galleryButton.addEventListener('click', (event) => {
-            event.preventDefault();
-            this.userPage.hide();
-            this.gallery.show();
-            this.showActiveRoute('gallery');
-        });
+		this.view.userPageButton.addEventListener("click", event => {
+			event.preventDefault();
+			this.gallery.hide();
+			this.userPage.show();
+			this.showActiveRoute("user-page");
+		});
 
-        this.view.userPageButton.addEventListener('click', (event) => {
-            event.preventDefault();
-            this.gallery.hide();
-            this.userPage.show();
-            this.showActiveRoute('user-page');
-        });
+		this.view.logOutButton.addEventListener("click", event => {
+			event.preventDefault();
+			this.navBlock.map(el => el.classList.add("hide"));
+			this.gallery.hide();
+			this.userPage.hide();
+			this.clearInputsValues();
+			this.view.container.classList.remove("hide");
+		});
+	},
 
-        this.view.logOutButton.addEventListener('click', (event) => {
-            event.preventDefault();
-            this.navBlock.map(el => el.classList.add('hide'));
-            this.gallery.hide();
-            this.userPage.hide();
-            this.clearInputsValues();
-            this.view.container.classList.remove('hide');
-        });  
-    },
+	validateUserData: function() {
+		return this.validator.isValid(this.getInputsValues());
+	},
 
-    validateUserData: function () {
-        return this.validator.isValid(this.getInputsValues());
-    },
+	showGallery: function() {
+		this.view.container.classList.add("hide");
+		this.gallery.show();
+	},
 
-    showGallery: function () {
-        this.view.container.classList.add('hide');
-        this.gallery.show();
-    },
+	showActiveRoute: function(route) {
+		this.navBlock.map(el => el.classList.remove("active"));
+		if (route === "gallery") {
+			this.view.galleryButton.classList.add("active");
+		}
+		if (route === "user-page") {
+			this.view.userPageButton.classList.add("active");
+		}
+	},
 
-    showActiveRoute: function (route) {
-        this.navBlock.map(el => el.classList.remove('active'));
-        if (route === 'gallery') {
-            this.view.galleryButton.classList.add('active')
-        }
-        if (route === 'user-page') {
-            this.view.userPageButton.classList.add('active')
-        }
-    },
+	showAlert: function(msg) {
+		this.view.alertBox.classList.remove("hide");
+		this.view.alertBox.innerText = msg;
+		setTimeout(() => {
+			this.view.alertBox.classList.add("hide");
+			this.view.alertBox.innerText = "";
+		}, 3 * 1000);
+	},
 
-    showAlert: function (msg) {
-        this.view.alertBox.classList.remove('hide');
-        this.view.alertBox.innerText = msg;
-        setTimeout(() => {
-            this.view.alertBox.classList.add('hide');
-            this.view.alertBox.innerText = '';
-        }, 3 * 1000);
-    },
+	getInputsValues: function() {
+		return {
+			login: this.view.loginInput.value.trim(),
+			password: this.view.passwordInput.value.trim()
+		};
+	},
 
-    getInputsValues: function () {
-        return {
-            login: this.view.loginInput.value.trim(),
-            password: this.view.passwordInput.value.trim()
-        }
-    },
-
+	clearInputsValues: function() {
+		this.view.loginInput.value = null;
+		this.view.passwordInput.value = null;
+	}
 };
