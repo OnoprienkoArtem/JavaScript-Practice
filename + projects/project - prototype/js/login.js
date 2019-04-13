@@ -78,7 +78,7 @@ LoginModule.prototype = {
             this.view.userPageButton.classList.add('active')
         }
     },
-    
+
     showAlert: function (msg) {
         this.view.alertBox.classList.remove('hide');
         this.view.alertBox.innerText = msg;
@@ -86,6 +86,13 @@ LoginModule.prototype = {
             this.view.alertBox.classList.add('hide');
             this.view.alertBox.innerText = '';
         }, 3 * 1000);
+    },
+
+    getInputsValues: function () {
+        return {
+            login: this.view.loginInput.value.trim(),
+            password: this.view.passwordInput.value.trim()
+        }
     },
 
 };
