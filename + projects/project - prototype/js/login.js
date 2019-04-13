@@ -79,5 +79,13 @@ LoginModule.prototype = {
         }
     },
     
+    showAlert: function (msg) {
+        this.view.alertBox.classList.remove('hide');
+        this.view.alertBox.innerText = msg;
+        setTimeout(() => {
+            this.view.alertBox.classList.add('hide');
+            this.view.alertBox.innerText = '';
+        }, 3 * 1000);
+    },
 
 };
