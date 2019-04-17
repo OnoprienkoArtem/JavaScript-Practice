@@ -20,3 +20,12 @@ BaseGalleryModule.prototype = {
         this.view.wrapper.classList.add('hide');
     }
 };
+
+
+const ExtendedGalleryModule = function (data, view) {
+    this.view = view;
+    this.galleryData = data.slice();
+    this.viewData = [];
+
+    BaseGalleryModule.apply(this);
+};
