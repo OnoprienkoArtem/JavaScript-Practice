@@ -29,3 +29,21 @@ const ExtendedGalleryModule = function (data, view) {
 
     BaseGalleryModule.apply(this);
 };
+
+
+ExtendedGalleryModule.prototype = {
+    init: function () {
+        // BaseGalleryModule.prototype.init.apply(this);
+        BaseGalleryModule.prototype.init.apply(this);
+        this.initListeners()
+    },
+
+
+
+
+
+
+
+
+
+};
