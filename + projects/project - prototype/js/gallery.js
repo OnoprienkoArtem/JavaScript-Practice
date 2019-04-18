@@ -38,7 +38,11 @@ ExtendedGalleryModule.prototype = {
         this.initListeners()
     },
 
-
+    initListeners: function () {
+        this.view.addBtn.addEventListener('click', this.addImage.bind(this));
+        this.view.sortSelector.addEventListener('change', this.onChangeSorting.bind(this));
+        this.view.container.addEventListener('click', this.deleteGalleryItem.bind(this));
+    },
 
 
 
