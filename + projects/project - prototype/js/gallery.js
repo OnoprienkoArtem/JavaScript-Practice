@@ -44,6 +44,16 @@ ExtendedGalleryModule.prototype = {
         this.view.container.addEventListener('click', this.deleteGalleryItem.bind(this));
     },
 
+    addImage: function addImg() {
+        if (this.galleryData.length > 0) {
+            this.viewData.push(this.galleryData.pop());
+            this.viewData = this.sortData(this.viewData);
+            this.renderGallery(this.viewData);
+            this.checkIfCanAddMore();
+        } else {
+            alert('Больше нет элементов в галерее!')
+        }
+    },
 
 
 
