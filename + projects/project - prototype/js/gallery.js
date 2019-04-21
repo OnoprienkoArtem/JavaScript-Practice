@@ -55,6 +55,38 @@ ExtendedGalleryModule.prototype = {
         }
     },
 
+    sortData: function sortData(data) {
+        let key;
+        let direction = 1;
+        function sortMethod(a, b) {
+            if (a[key] > b[key]) {
+                return direction;
+            } else if (a[key] < b[key]) {
+                return -direction;
+            } else {
+                return 0;
+            }
+        }
+        switch (this.view.sortSelector.value) {
+            case '1':
+                key = 'name';
+                direction = 1;
+                return data.sort(sortMethod);
+            case '2':
+                key = 'name';
+                direction = -1;
+                return data.sort(sortMethod);
+            case '3':
+                key = 'date';
+                direction = -1;
+                return data.sort(sortMethod);
+            case '4':
+                key = 'date';
+                direction = 1;
+                return data.sort(sortMethod);
+        }
+    },
+
 
 
 
