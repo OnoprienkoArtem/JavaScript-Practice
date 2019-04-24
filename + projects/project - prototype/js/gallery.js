@@ -87,7 +87,13 @@ ExtendedGalleryModule.prototype = {
         }
     },
 
-
+    checkIfCanAddMore: function () {
+        if (this.galleryData.length === 0) {
+            this.view.addBtn.setAttribute('disabled', '');
+        } else {
+            this.view.addBtn.removeAttribute('disabled');
+        }
+    },
 
 
 
