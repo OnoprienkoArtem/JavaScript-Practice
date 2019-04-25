@@ -12,7 +12,7 @@ BaseGalleryModule.prototype = {
         this.hide()
     },
 
-    show: function () {  
+    show: function () {
         this.view.wrapper.classList.remove('hide');
     },
 
@@ -58,6 +58,7 @@ ExtendedGalleryModule.prototype = {
     sortData: function sortData(data) {
         let key;
         let direction = 1;
+
         function sortMethod(a, b) {
             if (a[key] > b[key]) {
                 return direction;
@@ -93,6 +94,23 @@ ExtendedGalleryModule.prototype = {
         } else {
             this.view.addBtn.removeAttribute('disabled');
         }
+    },
+
+    renderGallery: function renderGallery(data) {
+        let outHtml = '';
+
+        data.forEach(item => {
+            outHtml += `<div class="col-sm-3 col-xs-6 card">\
+                            <img src="${(item.url)}" alt="${(item.name)}" class="img-thumbnail">\
+                            <div class="info-wrapper">\
+                                <div class="text-muted">${(item.name)}</div>\
+                                <div class="text-muted top-padding">${(item.description)}</div>\
+                                <div class="text-muted">${(item.dateString)}</div>\
+                                <div class="btn btn-danger delete" data-id="${item.id}">Удалить</div>\
+                            </div>\
+                        </div>`
+        });
+        this.view.container.innerHTML = outHtml;
     },
 
 
