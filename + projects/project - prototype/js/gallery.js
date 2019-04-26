@@ -113,6 +113,11 @@ ExtendedGalleryModule.prototype = {
         this.view.container.innerHTML = outHtml;
     },
 
+    onChangeSorting: function onChangeSorting() {
+        this.viewData = this.sortData(this.viewData);
+        this.renderGallery(this.viewData);
+    },
+
 
 
 
