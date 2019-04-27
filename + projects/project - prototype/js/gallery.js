@@ -118,6 +118,23 @@ ExtendedGalleryModule.prototype = {
         this.renderGallery(this.viewData);
     },
 
+    deleteGalleryItem: function deleteGalleryItem(event) {
+        if (!event.target.getAttribute("data-id")) {
+            return;
+        }
+        const id = event.target.getAttribute("data-id");
+        let deletedIndex = -1;
+        this.viewData.forEach((item, index) => {
+            if (item.id === +id) {
+                deletedIndex = index;
+            }
+        });
+
+        this.galleryData = this.galleryData.concat(this.viewData.splice(deletedIndex, 1)); // [itemForDelete]
+        this.renderGallery(this.viewData);
+        this.checkIfCanAddMore();
+    },
+
 
 
 
