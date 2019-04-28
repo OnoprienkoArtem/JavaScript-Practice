@@ -133,9 +133,7 @@ ExtendedGalleryModule.prototype = {
         this.galleryData = this.galleryData.concat(this.viewData.splice(deletedIndex, 1)); // [itemForDelete]
         this.renderGallery(this.viewData);
         this.checkIfCanAddMore();
-    },
-
-
-
-
+    }
 };
+
+utils.inheritance(BaseGalleryModule, ExtendedGalleryModule);
