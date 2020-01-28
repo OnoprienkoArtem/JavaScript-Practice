@@ -1,7 +1,9 @@
-// случаи потери контекста в основном случаются при использовании внутренних функций или функций обратного вызова.
+// случаи потери контекста в основном случаются 
+// при использовании внутренних функций или 
+// функций обратного вызова.
 
 let user = {
-    outerFunction: function() {
+    outerFunction: function () {
         console.log(this === user); // this === user
 
         function innerFunction() {
@@ -21,8 +23,8 @@ user.outerFunction();
 let user2 = {
     firstName: 'John',
     secondName: 'Hook',
-    getFullName: function() {
-        setTimeout(function() {
+    getFullName: function () {
+        setTimeout(function () {
             console.log(`Full name: ${this.firstName} ${this.secondName}`);
         }, 2000);
     }
@@ -41,7 +43,7 @@ function Room(type, area) {
         console.log(`Type of room: ${this.type}, area: ${this.area}`);
     }
 
-    this.getFullDescription = function() {
+    this.getFullDescription = function () {
         showInfo();
     }
 }
@@ -59,7 +61,7 @@ room1.getFullDescription(); // Type of room: undefined, area: undefined
 let user2_2 = {
     firstName: 'John',
     secondName: 'Hook',
-    getFullName: function () {        
+    getFullName: function () {
         const self = this;
 
         setTimeout(function () {
@@ -77,7 +79,7 @@ function Room2_2(type, area) {
     this.type = type;
 
     function showInfo() {
-        console.log(`Type of room: ${self.type}, area: ${self.area}`);
+        console.log(`Type of room: --> ${self.type}, area: ${self.area}`);
     }
 
     this.getFullDescription = function () {
@@ -104,7 +106,7 @@ room1_2.getFullDescription(); // Type of room: Guest, area: 15
 
 // functionName.apply(context, [param1, param2, param3]);  // второй параметр не обязателен
 
-function RoomCall(type, area) {   
+function RoomCall(type, area) {
     this.area = area;
     this.type = type;
 
@@ -128,8 +130,8 @@ function say(greeting) {
     console.log(`${greeting} ${this.firstName} ${this.lastName}`);
 }
 
-const person1 = { firstName: 'John', lastName: 'Jarvis'};
-const person2 = { firstName: 'Paul', lastName: 'Johnson'};
+const person1 = { firstName: 'John', lastName: 'Jarvis' };
+const person2 = { firstName: 'Paul', lastName: 'Johnson' };
 
 say.call(person1, 'Hello'); // Hello John Jarvis
 say.call(person2, 'Hi!'); // Hi! Paul Johnson
@@ -139,11 +141,11 @@ say.apply(person2, ['Hi!']); // Hi! Paul Johnson
 
 
 // -------------------------
-// bind() - не выполняет функцию, как только он был применен, он создает новыю функцию с привязанным контекстом,
+// bind() - не выполняет функцию, как только он был применен, он создает новую функцию с привязанным контекстом,
 // которую можно позже вызвать.
 
-const sayHello1 = say.bind(person1, 'Hello'); 
-const sayHello2 = say.bind(person2, ['Hi!']); 
+const sayHello1 = say.bind(person1, 'Hello');
+const sayHello2 = say.bind(person2, ['Hi!']);
 
 sayHello1(); // Hello John Jarvis
 sayHello2(); // Hi! Paul Johnson
@@ -156,7 +158,7 @@ sayHello2(); // Hi! Paul Johnson
 let user2_3 = {
     firstName: 'John2_3',
     secondName: 'Hook2_3',
-    getFullName: function () {  
+    getFullName: function () {
         setTimeout(() => {
             console.log(`Full name: ${this.firstName} ${this.secondName}`);
         }, 2000);
@@ -165,5 +167,63 @@ let user2_3 = {
 user2_3.getFullName(); //  Full name: John2_3 Hook2_3
 
 
+
+
+// -----
+
+const person = {
+    surname: 'Stark',
+    knows: function (what, name) {
+        console.log(`You ${what} know, ${name} ${this.surname}`);
+    }
+}
+
+person.knows('all', 'Bran'); // You all know, Bran Stark
+
+const john = {
+    surname: 'Snow'
+};
+
+person.knows.call(john, `nothing`, `John`); // You nothing know, John Snow
+person.knows.apply(john, [`nothing`, `John`]); // You nothing know, John Snow
+person.knows.call(john, ...[`nothing`, `John`]); // You nothing know, John Snow
+
+// bind - не вызывает функцию сразу, а возвращает функцию
+person.knows.bind(john, `nothing`, `John`)(); // You nothing know, John Snow
+
+const bound = person.knows.bind(john, `nothing`, `John`); 
+bound(); // You nothing know, John Snow
+
+
+// -- явный 
+function logThis() {
+    console.log(this);
+}
+
+const obj = {num: 50}
+logThis.apply(obj); // { num: 50 }
+logThis.call(obj);  // { num: 50 }
+logThis.bind(obj)(); // { num: 50 }
+
+
+// -- неявный
+const animal = {
+    legs: 4,
+    logThis: function() {
+        console.log(this);
+    }
+}
+
+animal.logThis(); // { legs: 4, logThis: [Function: logThis] }
+
+// ---
+
+function Cat(color) {
+    this.color = color;
+    console.log('this --> ', this);
+    (() => console.log('Arrow this', this))()
+}
+
+new Cat('red'); // Arrow this Cat { color: 'red' }
 
 

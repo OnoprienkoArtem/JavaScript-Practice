@@ -99,7 +99,7 @@ console.log(`Now you are listening ${songName(nameW)}`);
 const num = 35;
 const bigNumber = new Number(55);
 
-console.log(typeof num); // numv=ber
+console.log(typeof num); // number
 console.log(typeof bigNumber); // object
 
 
