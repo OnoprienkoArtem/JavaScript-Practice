@@ -7,12 +7,12 @@ const person = {
     age: 35,
     say: hello,
     sayHelloWindow: hello.bind(document),
-    logInfo: function(jop, phone) {
+    logInfo: function(job, phone) {
         console.group(`${this.name} info`);
         console.log(`Name: ${this.name}`);
         console.log(`Age is: ${this.age}`);
-        console.log(`Job is: ${this.job}`);
-        console.log(`Phone is: ${this.phone}`);
+        console.log(`Job is: ${job}`);
+        console.log(`Phone is: ${phone}`);
         console.groupEnd();
     }
 }
@@ -26,7 +26,40 @@ const sara = {
     age: 50
 }
 
-const lenaLogInfo = person.logInfo.bind(sara, 'doctor', '2-333-111-55-33');
+
+// BIND
+// метод bind возвращает новую функцию, не вызывает
+const lenaLogInfo = person.logInfo.bind(sara, 'doctor', '22-333-111-55-66');
+// person.logInfo.bind(sara, 'doctor', 'doctor')(); можно так вызвать
 
 lenaLogInfo(); 
+// если не передать параметры
 // Sara info  Name: Sara / Age is: 50 / Job is: undefined / Phone is: undefined
+// с параметрами
+// Sara info  Name: Sara / Age is: 50 / Job is: doctor / Phone is: 22-333-111-55-66
+
+
+// CALL - сразу вызывает
+person.logInfo.call(sara, 'doctor', '22-333-111-55-66');
+// Sara info  Name: Sara / Age is: 50 / Job is: doctor / Phone is: 22-333-111-55-66
+
+// APPLY - сразу вызывает, также как и CALL но только параметры в массиве
+person.logInfo.apply(sara, ['doctor', '22-333-111-55-66']);
+// Sara info  Name: Sara / Age is: 50 / Job is: doctor / Phone is: 22-333-111-55-66
+
+
+// ===========
+
+const arr = [1, 2, 3, 4, 5];
+
+Array.prototype.multBy = function(n) {
+    return this.map(function(i) {
+        return i * n;
+    })
+}
+
+console.log(arr.multBy(5)); //  [5, 10, 15, 20, 25]
+
+
+
+
