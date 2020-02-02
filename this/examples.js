@@ -48,18 +48,3 @@ person.logInfo.apply(sara, ['doctor', '22-333-111-55-66']);
 // Sara info  Name: Sara / Age is: 50 / Job is: doctor / Phone is: 22-333-111-55-66
 
 
-// ===========
-
-const arr = [1, 2, 3, 4, 5];
-
-Array.prototype.multBy = function(n) {
-    return this.map(function(i) {
-        return i * n;
-    })
-}
-
-console.log(arr.multBy(5)); //  [5, 10, 15, 20, 25]
-
-
-
-

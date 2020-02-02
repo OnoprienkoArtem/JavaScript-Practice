@@ -28,3 +28,18 @@ sara.name = 'Sara';
 sara.say(); // Hello! Sara
 
 sara.greet(); // Greet!! Sara
+
+
+
+// --------------
+
+
+const arr = [1, 2, 3, 4, 5];
+
+Array.prototype.multBy = function(n) {
+    return this.map(function(i) {
+        return i * n;
+    })
+}
+
+console.log(arr.multBy(5)); //  [5, 10, 15, 20, 25]
