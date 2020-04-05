@@ -12,25 +12,62 @@ class News {
         this.modified = true;
     }
 
-    toHTML() {
+    // toHTML() {
+    //     return `
+    //         <div class="news">
+    //             <h1>${ this.title }</h1>
+    //             <p>${ this.text }</p>
+    //         </div>
+    //     `
+    // }
+    //
+    // toJSON() {
+    //     return JSON.stringify({
+    //         title: this.title,
+    //         text: this.text,
+    //         modified: this.modified
+    //     }, null, 2)
+    // }
+}
+
+
+class NewsPrinter {
+    constructor(news) {
+        this.news =news;
+    }
+
+    html() {
         return `
             <div class="news">
-                <h1>${ this.title }</h1>
-                <p>${ this.text }</p>
+                <h1>${ this.news.title }</h1>
+                <p>${ this.news.text }</p>
             </div>
         `
     }
 
-    toJSON() {
+    json() {
         return JSON.stringify({
-            title: this.title,
-            text: this.text,
-            modified: this.modified
+            title: this.news.title,
+            text: this.news.text,
+            modified: this.news.modified
         }, null, 2)
+    }
+
+    xml() {
+        return `
+            <news>
+                <title>${ this.news.title }</title>
+                <text>${ this.news.text }</text>
+            </news>
+        `
     }
 }
 
 
 const news = new News('car', 'new model launched');
 
-console.log(news);
+const printer = new NewsPrinter(news);
+
+console.log(printer.html());
+console.log(printer.json());
+console.log(printer.xml());
