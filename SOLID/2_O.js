@@ -25,9 +25,18 @@ class AreaCalculator {
             if (shape.type === 'circle') {
                 acc += (shape.radius ** 2) * Math.PI
             } else if (shape.type === 'square') {
-                acc += shape.radius ** 2;
+                acc += shape.size ** 2;
             }
             return acc;
         }, 0)
     }
 }
+
+
+const calc = new AreaCalculator([
+    new Square(10),
+    new Circle(1),
+    new Circle(5)
+]);
+
+console.log(calc.sum());  //  181.68140899333463
